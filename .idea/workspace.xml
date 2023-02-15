@@ -31,7 +31,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "C:/Users/Student/workspace/personal/Mindustry",
+    "last_directory_selection": "C:/Users/Student/workspace/personal/BicycleMaintenance/Main/src",
+    "last_opened_file_path": "C:/Users/Student/workspace/pair-projects/nlr-12-module-1-capstone-purple-team-0",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -44,11 +45,11 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main.Main" />
+      <option name="MAIN_CLASS_NAME" value="bikeMaintenance.Main" />
       <module name="BicycleMaintenance" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Main.*" />
+          <option name="PATTERN" value="bikeMaintenance.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

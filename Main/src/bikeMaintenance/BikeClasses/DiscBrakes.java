@@ -1,8 +1,8 @@
-package Main.BikeClasses;
+package bikeMaintenance.BikeClasses;
 
 public class DiscBrakes extends BrakingSystem {
 
-    private String discModel;
+    private String discModelCommaYear;
 
     public DiscBrakes() {
     }

@@ -1,4 +1,4 @@
-package Main.Service;
+package bikeMaintenance.Service;
 
 public class ServiceIntervals {
 
