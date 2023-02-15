@@ -1,12 +1,16 @@
-package BikeClasses;
+package Main.BikeClasses;
 
-public class Wheel {
+public class Tire {
     private String model;
     private int distance;
     private int age;
     private String size;
-    private String material;
-    private Tire tire;
+    private String type;
+    private int sealantAge;
+    private boolean isTubeless;
+
+    public Tire() {
+    }
 
     public String getModel() {
         return model;
@@ -40,28 +44,27 @@ public class Wheel {
         this.size = size;
     }
 
-    public String getMaterial() {
-        return material;
+    public String getType() {
+        return type;
     }
 
-    public void setMaterial(String material) {
-        this.material = material;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public Tire getTire() {
-        return tire;
+    public int getSealantAge() {
+        return sealantAge;
     }
 
-    public void setTire(Tire tire) {
-        this.tire = tire;
+    public void setSealantAge(int sealantAge) {
+        this.sealantAge = sealantAge;
     }
 
-    public Wheel(String model, int distance, int age, String size, String material, Tire tire) {
-        this.model = model;
-        this.distance = distance;
-        this.age = age;
-        this.size = size;
-        this.material = material;
-        this.tire = tire;
+    public boolean isTubeless() {
+        return isTubeless;
+    }
+
+    public void setTubeless(boolean tubeless) {
+        isTubeless = tubeless;
     }
 }

@@ -1,4 +1,4 @@
-package BikeClasses;
+package Main.BikeClasses;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,9 @@ public class Drivetrain {
     private ArrayList<Chain> chains;
     private Cassette cassette;
     private Chainring chainring;
+
+    public Drivetrain() {
+    }
 
     public String getModel() {
         return model;
@@ -35,12 +38,29 @@ public class Drivetrain {
         return chainring;
     }
 
-    public Drivetrain(String model, int year, int age, ArrayList<Chain> chains, Cassette cassette, Chainring chainring) {
+    public void setModel(String model) {
         this.model = model;
+    }
+
+    public void setYear(int year) {
         this.year = year;
+    }
+
+    public void setAge(int age) {
         this.age = age;
+    }
+
+    public void setChains(ArrayList<Chain> chains) {
         this.chains = chains;
+    }
+
+    public void setCassette(Cassette cassette) {
         this.cassette = cassette;
+    }
+
+    public void setChainring(Chainring chainring) {
         this.chainring = chainring;
     }
+
+
 }

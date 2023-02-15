@@ -1,4 +1,4 @@
-package BikeClasses;
+package Main.BikeClasses;
 
 public class Cassette {
     private int distance;
@@ -6,6 +6,14 @@ public class Cassette {
     private int speeds;
     private String model;
     private String size;
+
+    public Cassette(int distance, int age, int speeds, String model, String size) {
+        this.distance = distance;
+        this.age = age;
+        this.speeds = speeds;
+        this.model = model;
+        this.size = size;
+    }
 
     public int getDistance() {
         return distance;
@@ -47,11 +55,4 @@ public class Cassette {
         this.size = size;
     }
 
-    public Cassette(int distance, int age, int speeds, String model, String size) {
-        this.distance = distance;
-        this.age = age;
-        this.speeds = speeds;
-        this.model = model;
-        this.size = size;
-    }
 }

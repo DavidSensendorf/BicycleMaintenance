@@ -1,6 +1,8 @@
-package BikeClasses;
+package Main.BikeClasses;
 
 public class Bicycle {
+    private int distanceInterval;
+    private int ageInterval;
     private String name;
     private String type;
     private String manufacturer;
@@ -13,6 +15,25 @@ public class Bicycle {
     private Wheel frontWheel;
 
     private Cables cables;
+
+    public Bicycle() {
+    }
+
+    public int getDistanceInterval() {
+        return distanceInterval;
+    }
+
+    public void setDistanceInterval(int distanceInterval) {
+        this.distanceInterval = distanceInterval;
+    }
+
+    public int getAgeInterval() {
+        return ageInterval;
+    }
+
+    public void setAgeInterval(int ageInterval) {
+        this.ageInterval = ageInterval;
+    }
 
     public Cables getCables() {
         return cables;
@@ -102,18 +123,4 @@ public class Bicycle {
         this.frontWheel = frontWheel;
     }
 
-    public Bicycle(String name, String type, String manufacturer, String model, int age, int distance,
-                   BrakingSystem brakes, Drivetrain drivetrain, Wheel rearWheel, Wheel frontWheel, Cables cables) {
-        this.name = name;
-        this.type = type;
-        this.manufacturer = manufacturer;
-        this.model = model;
-        this.age = age;
-        this.distance = distance;
-        this.brakes = brakes;
-        this.drivetrain = drivetrain;
-        this.rearWheel = rearWheel;
-        this.frontWheel = frontWheel;
-        this.cables = cables;
-    }
 }

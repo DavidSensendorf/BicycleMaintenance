@@ -1,4 +1,4 @@
-package BikeClasses;
+package Main.BikeClasses;
 
 public class Cables {
     private int age;
@@ -20,8 +20,7 @@ public class Cables {
         this.distance = distance;
     }
 
-    public Cables(int age, int distance) {
-        this.age = age;
-        this.distance = distance;
+    public Cables() {
+
     }
 }

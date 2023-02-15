@@ -1,11 +1,16 @@
-package BikeClasses;
+package Main.BikeClasses;
 
-public class Chainring {
+public class Chain {
     private int distance;
     private int age;
-    private String size;
     private String model;
     private int speeds;
+    private String lubeType;
+    private int lubeInterval;
+
+    public Chain() {
+
+    }
 
     public int getDistance() {
         return distance;
@@ -21,14 +26,6 @@ public class Chainring {
 
     public void setAge(int age) {
         this.age = age;
-    }
-
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
     }
 
     public String getModel() {
@@ -47,11 +44,19 @@ public class Chainring {
         this.speeds = speeds;
     }
 
-    public Chainring(int distance, int age, String size, String model, int speeds) {
-        this.distance = distance;
-        this.age = age;
-        this.size = size;
-        this.model = model;
-        this.speeds = speeds;
+    public String getLubeType() {
+        return lubeType;
+    }
+
+    public void setLubeType(String lubeType) {
+        this.lubeType = lubeType;
+    }
+
+    public int getLubeInterval() {
+        return lubeInterval;
+    }
+
+    public void setLubeInterval(int lubeInterval) {
+        this.lubeInterval = lubeInterval;
     }
 }
