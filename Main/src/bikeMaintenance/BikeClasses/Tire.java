@@ -11,7 +11,17 @@ public class Tire {
     private int daysSinceService;
     private int metersSinceService;
 
-    public Tire() {
+    public Tire(String modelCommaYear, int distanceInMeters, int ageInDays, String size, String type,
+                int sealantAgeInDays, boolean isTubeless, int daysSinceService, int metersSinceService) {
+        this.modelCommaYear = modelCommaYear;
+        this.distanceInMeters = distanceInMeters;
+        this.ageInDays = ageInDays;
+        this.size = size;
+        this.type = type;
+        this.sealantAgeInDays = sealantAgeInDays;
+        this.isTubeless = isTubeless;
+        this.daysSinceService = daysSinceService;
+        this.metersSinceService = metersSinceService;
     }
 
     public int getDaysSinceService() {

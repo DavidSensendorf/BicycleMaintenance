@@ -10,7 +10,15 @@ public class Cassette {
     private int metersSinceService;
     private int daysSinceService;
 
-    public Cassette() {
+    public Cassette(int distanceInMeters, int ageInDays, int speeds, String modelCommaYear, String size, String gears, int metersSinceService, int daysSinceService) {
+        this.distanceInMeters = distanceInMeters;
+        this.ageInDays = ageInDays;
+        this.speeds = speeds;
+        this.modelCommaYear = modelCommaYear;
+        this.size = size;
+        this.gears = gears;
+        this.metersSinceService = metersSinceService;
+        this.daysSinceService = daysSinceService;
     }
 
     public String getGears() {

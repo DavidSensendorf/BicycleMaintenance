@@ -1,5 +1,7 @@
 package bikeMaintenance.BikeClasses;
 
+import bikeMaintenance.DataStorageRetrieval.SQL;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,7 +16,15 @@ public class Bicycle {
     private int distanceInMeters;
     private Map<String, Object> bikePartsList = new HashMap<>();
 
-    public Bicycle() {
+    public Bicycle(int metersSinceService, int daysSinceService, String name, String type, String manufacturer, String modelCommaYear, int ageInDays, int distanceInMeters) {
+        this.metersSinceService = metersSinceService;
+        this.daysSinceService = daysSinceService;
+        this.name = name;
+        this.type = type;
+        this.manufacturer = manufacturer;
+        this.modelCommaYear = modelCommaYear;
+        this.ageInDays = ageInDays;
+        this.distanceInMeters = distanceInMeters;
     }
 
     public Map<String, Object> getBikePartsList() {

@@ -9,7 +9,14 @@ public class Wheel {
     private int metersSinceService;
     private int daysSinceService;
 
-    public Wheel() {
+    public Wheel(String modelCommaYear, int distanceInMeters, int ageInDays, String size, String material, int metersSinceService, int daysSinceService) {
+        this.modelCommaYear = modelCommaYear;
+        this.distanceInMeters = distanceInMeters;
+        this.ageInDays = ageInDays;
+        this.size = size;
+        this.material = material;
+        this.metersSinceService = metersSinceService;
+        this.daysSinceService = daysSinceService;
     }
 
     public String getModelCommaYear() {

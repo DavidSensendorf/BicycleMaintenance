@@ -6,6 +6,13 @@ public class Cables {
     private int daysSinceService;
     private int metersSinceService;
 
+    public Cables(int ageInDays, int distanceInMeters, int daysSinceService, int metersSinceService) {
+        this.ageInDays = ageInDays;
+        this.distanceInMeters = distanceInMeters;
+        this.daysSinceService = daysSinceService;
+        this.metersSinceService = metersSinceService;
+    }
+
     public int getDaysSinceService() {
         return daysSinceService;
     }
@@ -38,7 +45,5 @@ public class Cables {
         this.distanceInMeters = distanceInMeters;
     }
 
-    public Cables() {
 
-    }
 }

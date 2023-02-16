@@ -9,8 +9,14 @@ public class Chain {
     private int daysSinceLube;
     private int metersSinceLube;
 
-    public Chain() {
-
+    public Chain(int distanceInMeters, int ageInDays, String modelCommaYear, int speeds, String lubeType, int daysSinceLube, int metersSinceLube) {
+        this.distanceInMeters = distanceInMeters;
+        this.ageInDays = ageInDays;
+        this.modelCommaYear = modelCommaYear;
+        this.speeds = speeds;
+        this.lubeType = lubeType;
+        this.daysSinceLube = daysSinceLube;
+        this.metersSinceLube = metersSinceLube;
     }
 
     public int getDistanceInMeters() {

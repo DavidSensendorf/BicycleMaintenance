@@ -7,6 +7,14 @@ public class BrakePad {
     private int metersSinceService;
     private int daysSinceService;
 
+    public BrakePad(int distanceInMeters, int ageInDays, String padType, int metersSinceService, int daysSinceService) {
+        this.distanceInMeters = distanceInMeters;
+        this.ageInDays = ageInDays;
+        this.padType = padType;
+        this.metersSinceService = metersSinceService;
+        this.daysSinceService = daysSinceService;
+    }
+
     public int getDistanceInMeters() {
         return distanceInMeters;
     }
@@ -47,6 +55,4 @@ public class BrakePad {
         this.daysSinceService = daysSinceService;
     }
 
-    public BrakePad() {
-    }
 }

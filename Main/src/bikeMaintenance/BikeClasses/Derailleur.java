@@ -8,7 +8,13 @@ public class Derailleur {
     private int daysSinceService;
     private int metersSinceService;
 
-    public Derailleur() {
+    public Derailleur(String model, int year, int ageInDays, int distanceInMeters, int daysSinceService, int metersSinceService) {
+        this.model = model;
+        this.year = year;
+        this.ageInDays = ageInDays;
+        this.distanceInMeters = distanceInMeters;
+        this.daysSinceService = daysSinceService;
+        this.metersSinceService = metersSinceService;
     }
 
     public int getAgeInDays() {

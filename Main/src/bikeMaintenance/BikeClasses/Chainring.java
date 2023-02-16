@@ -9,8 +9,14 @@ public class Chainring {
     private int daysSinceService;
     private int metersSinceService;
 
-    public Chainring() {
-
+    public Chainring(int distanceInMeters, int ageInDays, String size, String modelCommaYear, int speeds, int daysSinceService, int metersSinceService) {
+        this.distanceInMeters = distanceInMeters;
+        this.ageInDays = ageInDays;
+        this.size = size;
+        this.modelCommaYear = modelCommaYear;
+        this.speeds = speeds;
+        this.daysSinceService = daysSinceService;
+        this.metersSinceService = metersSinceService;
     }
 
     public int getDaysSinceService() {

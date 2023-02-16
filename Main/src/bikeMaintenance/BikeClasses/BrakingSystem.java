@@ -7,11 +7,17 @@ public abstract class BrakingSystem {
     private int daysSinceService;
     private int metersSinceService;
 
+    public BrakingSystem(BrakePad brakePad, int distanceInMeters, int ageInDays, int daysSinceService, int metersSinceService) {
+        this.brakePad = brakePad;
+        this.distanceInMeters = distanceInMeters;
+        this.ageInDays = ageInDays;
+        this.daysSinceService = daysSinceService;
+        this.metersSinceService = metersSinceService;
+    }
 
     public int getDaysSinceService() {
         return daysSinceService;
     }
-
     public void setDaysSinceService(int daysSinceService) {
         this.daysSinceService = daysSinceService;
     }
@@ -46,9 +52,5 @@ public abstract class BrakingSystem {
 
     public void setAgeInDays(int ageInDays) {
         this.ageInDays = ageInDays;
-    }
-
-    public BrakingSystem() {
-
     }
 }
