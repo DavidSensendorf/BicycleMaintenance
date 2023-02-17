@@ -36,7 +36,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "11",
     "last_directory_selection": "C:/Users/Student/workspace/personal/BicycleMaintenance/Main/src",
-    "last_opened_file_path": "C:/Users/Student/workspace/pair-projects/nlr-12-module-1-capstone-purple-team-0",
+    "last_opened_file_path": "C:/Users/Student/workspace/david-sensendorf-student-code/java/module2/03_Joins/exercise",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -47,7 +47,7 @@
       <recent name="Main" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UtilitiesTests">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="bikeMaintenance.Main" />
       <module name="BicycleMaintenance" />
@@ -72,8 +72,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UtilitiesTests" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.UtilitiesTests" />
       </list>
     </recent_temporary>
   </component>

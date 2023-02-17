@@ -1,6 +1,6 @@
 package bikeMaintenance.Service;
 
-public class ServiceIntervals {
+public class SuggestedIntervals {
 
 
     //All distances in meters and Ages in days unless specified otherwise
@@ -10,16 +10,12 @@ public class ServiceIntervals {
     private final int bicycleDistanceShort = 0;
     private final int bicycleDistanceNormal = 0;
     private final int bicycleDistanceLong = 0;
-    private int bicycleAge;
-    private int bicycleDistance;
     private final int brakePadAgeShort = 200;
     private final int brakePadAgeNormal = 365;
     private final int brakePadAgeLong = 600;
     private final int brakePadDistanceShort = 200;
     private final int brakePadDistanceNormal = 0;
     private final int brakePadDistanceLong = 0;
-    private int brakePadAge;
-    private int brakePadDistance;
     private final int cablesAgeShort = 200;
     private final int cablesAgeNormal = 365;
     private final int cablesAgeLong = 600;

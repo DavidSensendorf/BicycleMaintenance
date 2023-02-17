@@ -1,22 +1,45 @@
 package bikeMaintenance.BikeClasses;
 
+import java.time.LocalDate;
+
 public class Chainring {
     private int distanceInMeters;
-    private int ageInDays;
+    private LocalDate installDate;
     private String size;
     private String modelCommaYear;
     private int speeds;
     private int daysSinceService;
     private int metersSinceService;
+    private int ageInterval;
+    private int distanceInterval;
 
-    public Chainring(int distanceInMeters, int ageInDays, String size, String modelCommaYear, int speeds, int daysSinceService, int metersSinceService) {
+    public Chainring(int distanceInMeters, LocalDate installDate, String size, String modelCommaYear, int speeds,
+                     int daysSinceService, int metersSinceService, int ageInterval, int distanceInterval) {
         this.distanceInMeters = distanceInMeters;
-        this.ageInDays = ageInDays;
+        this.installDate = installDate;
         this.size = size;
         this.modelCommaYear = modelCommaYear;
         this.speeds = speeds;
         this.daysSinceService = daysSinceService;
         this.metersSinceService = metersSinceService;
+        this.ageInterval = ageInterval;
+        this.distanceInterval = distanceInterval;
+    }
+
+    public int getAgeInterval() {
+        return ageInterval;
+    }
+
+    public void setAgeInterval(int ageInterval) {
+        this.ageInterval = ageInterval;
+    }
+
+    public int getDistanceInterval() {
+        return distanceInterval;
+    }
+
+    public void setDistanceInterval(int distanceInterval) {
+        this.distanceInterval = distanceInterval;
     }
 
     public int getDaysSinceService() {
@@ -43,12 +66,12 @@ public class Chainring {
         this.distanceInMeters = distanceInMeters;
     }
 
-    public int getAgeInDays() {
-        return ageInDays;
+    public LocalDate getInstallDate() {
+        return installDate;
     }
 
-    public void setAgeInDays(int ageInDays) {
-        this.ageInDays = ageInDays;
+    public void setInstallDate(LocalDate installDate) {
+        this.installDate = installDate;
     }
 
     public String getSize() {

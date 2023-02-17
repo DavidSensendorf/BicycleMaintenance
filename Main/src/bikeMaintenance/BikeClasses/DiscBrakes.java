@@ -1,11 +1,14 @@
 package bikeMaintenance.BikeClasses;
 
+import java.time.LocalDate;
+
 public class DiscBrakes extends BrakingSystem {
 
     private String discModelCommaYear;
 
-    public DiscBrakes(BrakePad brakePad, int distanceInMeters, int ageInDays, int daysSinceService, int metersSinceService, String discModelCommaYear) {
-        super(brakePad, distanceInMeters, ageInDays, daysSinceService, metersSinceService);
+    public DiscBrakes(BrakePad brakePad, int distanceInMeters, LocalDate ageInDays, int daysSinceService,
+                      int metersSinceService, int ageInterval, int distanceInterval, String discModelCommaYear) {
+        super(brakePad, distanceInMeters, ageInDays, daysSinceService, metersSinceService, ageInterval, distanceInterval);
         this.discModelCommaYear = discModelCommaYear;
     }
 

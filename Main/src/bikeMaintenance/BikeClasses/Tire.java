@@ -1,27 +1,50 @@
 package bikeMaintenance.BikeClasses;
 
+import java.time.LocalDate;
+
 public class Tire {
     private String modelCommaYear;
     private int distanceInMeters;
-    private int ageInDays;
+    private LocalDate installDate;
     private String size;
     private String type;
     private int sealantAgeInDays;
     private boolean isTubeless;
     private int daysSinceService;
     private int metersSinceService;
+    private int ageInterval;
+    private int distanceInterval;
 
-    public Tire(String modelCommaYear, int distanceInMeters, int ageInDays, String size, String type,
-                int sealantAgeInDays, boolean isTubeless, int daysSinceService, int metersSinceService) {
+    public Tire(String modelCommaYear, int distanceInMeters, LocalDate installDate, String size, String type,
+                int sealantAgeInDays, boolean isTubeless, int daysSinceService, int metersSinceService, int ageInterval,
+                int distanceInterval) {
         this.modelCommaYear = modelCommaYear;
         this.distanceInMeters = distanceInMeters;
-        this.ageInDays = ageInDays;
+        this.installDate = installDate;
         this.size = size;
         this.type = type;
         this.sealantAgeInDays = sealantAgeInDays;
         this.isTubeless = isTubeless;
         this.daysSinceService = daysSinceService;
         this.metersSinceService = metersSinceService;
+        this.ageInterval = ageInterval;
+        this.distanceInterval = distanceInterval;
+    }
+
+    public int getAgeInterval() {
+        return ageInterval;
+    }
+
+    public void setAgeInterval(int ageInterval) {
+        this.ageInterval = ageInterval;
+    }
+
+    public int getDistanceInterval() {
+        return distanceInterval;
+    }
+
+    public void setDistanceInterval(int distanceInterval) {
+        this.distanceInterval = distanceInterval;
     }
 
     public int getDaysSinceService() {
@@ -56,12 +79,12 @@ public class Tire {
         this.distanceInMeters = distanceInMeters;
     }
 
-    public int getAgeInDays() {
-        return ageInDays;
+    public LocalDate getInstallDate() {
+        return installDate;
     }
 
-    public void setAgeInDays(int ageInDays) {
-        this.ageInDays = ageInDays;
+    public void setInstallDate(LocalDate installDate) {
+        this.installDate = installDate;
     }
 
     public String getSize() {

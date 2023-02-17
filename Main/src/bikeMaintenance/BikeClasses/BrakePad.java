@@ -1,18 +1,41 @@
 package bikeMaintenance.BikeClasses;
 
+import java.time.LocalDate;
+
 public class BrakePad {
     private int distanceInMeters;
     private int ageInDays;
     private String padType;
     private int metersSinceService;
     private int daysSinceService;
+    private LocalDate installDate;
+    private int distanceInterval;
 
-    public BrakePad(int distanceInMeters, int ageInDays, String padType, int metersSinceService, int daysSinceService) {
+    public BrakePad(int distanceInMeters, int ageInDays, String padType, int metersSinceService, int daysSinceService,
+                    LocalDate installDate, int distanceInterval) {
         this.distanceInMeters = distanceInMeters;
         this.ageInDays = ageInDays;
         this.padType = padType;
         this.metersSinceService = metersSinceService;
         this.daysSinceService = daysSinceService;
+        this.installDate = installDate;
+        this.distanceInterval = distanceInterval;
+    }
+
+    public LocalDate getInstallDate() {
+        return installDate;
+    }
+
+    public void setInstallDate(LocalDate installDate) {
+        this.installDate = installDate;
+    }
+
+    public int getDistanceInterval() {
+        return distanceInterval;
+    }
+
+    public void setDistanceInterval(int distanceInterval) {
+        this.distanceInterval = distanceInterval;
     }
 
     public int getDistanceInMeters() {

@@ -1,24 +1,47 @@
 package bikeMaintenance.BikeClasses;
 
+import java.time.LocalDate;
+
 public class Cassette {
     private int distanceInMeters;
-    private int ageInDays;
+    private LocalDate installDate;
     private int speeds;
     private String modelCommaYear;
     private String size;
     private String gears;
     private int metersSinceService;
     private int daysSinceService;
+    private int ageInterval;
+    private int distanceInterval;
 
-    public Cassette(int distanceInMeters, int ageInDays, int speeds, String modelCommaYear, String size, String gears, int metersSinceService, int daysSinceService) {
+    public Cassette(int distanceInMeters, LocalDate installDate, int speeds, String modelCommaYear, String size,
+                    String gears, int metersSinceService, int daysSinceService, int ageInterval, int distanceInterval) {
         this.distanceInMeters = distanceInMeters;
-        this.ageInDays = ageInDays;
+        this.installDate = installDate;
         this.speeds = speeds;
         this.modelCommaYear = modelCommaYear;
         this.size = size;
         this.gears = gears;
         this.metersSinceService = metersSinceService;
         this.daysSinceService = daysSinceService;
+        this.ageInterval = ageInterval;
+        this.distanceInterval = distanceInterval;
+    }
+
+    public int getAgeInterval() {
+        return ageInterval;
+    }
+
+    public void setAgeInterval(int ageInterval) {
+        this.ageInterval = ageInterval;
+    }
+
+    public int getDistanceInterval() {
+        return distanceInterval;
+    }
+
+    public void setDistanceInterval(int distanceInterval) {
+        this.distanceInterval = distanceInterval;
     }
 
     public String getGears() {
@@ -53,12 +76,12 @@ public class Cassette {
         this.distanceInMeters = distanceInMeters;
     }
 
-    public int getAgeInDays() {
-        return ageInDays;
+    public LocalDate getInstallDate() {
+        return installDate;
     }
 
-    public void setAgeInDays(int ageInDays) {
-        this.ageInDays = ageInDays;
+    public void setInstallDate(LocalDate installDate) {
+        this.installDate = installDate;
     }
 
     public int getSpeeds() {

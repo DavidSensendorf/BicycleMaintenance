@@ -1,8 +1,6 @@
 package bikeMaintenance.BikeClasses;
 
-import bikeMaintenance.DataStorageRetrieval.SQL;
-
-import java.util.HashMap;
+import java.time.LocalDate;
 import java.util.Map;
 
 public class Bicycle {
@@ -12,32 +10,52 @@ public class Bicycle {
     private String type;
     private String manufacturer;
     private String modelCommaYear;
-    private int ageInDays;
+    private LocalDate installDate;
     private int distanceInMeters;
-    private Map<String, Object> bikePartsList = new HashMap<>();
-    private Map<Integer, Object> bikeServiceList = new HashMap<>();
+    private int ageInterval;
+    private int distanceInterval;
+    private Map<String, Object> bikePartsList;
+    private Map<String, Object> bikeServiceRecords;
 
     public Bicycle(int metersSinceService, int daysSinceService, String name, String type, String manufacturer,
-                   String modelCommaYear, int ageInDays, int distanceInMeters, Map<String, Object> bikePartsList,
-                   Map<Integer, Object> bikeServiceList) {
+                   String modelCommaYear, LocalDate installDate, int distanceInMeters, int ageInterval, int distanceInterval,
+                   Map<String, Object> bikePartsList, Map<String, Object> bikeServiceRecords) {
         this.metersSinceService = metersSinceService;
         this.daysSinceService = daysSinceService;
         this.name = name;
         this.type = type;
         this.manufacturer = manufacturer;
         this.modelCommaYear = modelCommaYear;
-        this.ageInDays = ageInDays;
+        this.installDate = installDate;
         this.distanceInMeters = distanceInMeters;
+        this.ageInterval = ageInterval;
+        this.distanceInterval = distanceInterval;
         this.bikePartsList = bikePartsList;
-        this.bikeServiceList = bikeServiceList;
+        this.bikeServiceRecords = bikeServiceRecords;
     }
 
-    public Map<Integer, Object> getBikeServiceList() {
-        return bikeServiceList;
+    public int getAgeInterval() {
+        return ageInterval;
     }
 
-    public void setBikeServiceList(Map<Integer, Object> bikeServiceList) {
-        this.bikeServiceList = bikeServiceList;
+    public void setAgeInterval(int ageInterval) {
+        this.ageInterval = ageInterval;
+    }
+
+    public int getDistanceInterval() {
+        return distanceInterval;
+    }
+
+    public void setDistanceInterval(int distanceInterval) {
+        this.distanceInterval = distanceInterval;
+    }
+
+    public Map<String, Object> getBikeServiceRecords() {
+        return bikeServiceRecords;
+    }
+
+    public void setBikeServiceRecords(Map<String, Object> bikeServiceRecords) {
+        this.bikeServiceRecords = bikeServiceRecords;
     }
 
     public Map<String, Object> getBikePartsList() {
@@ -80,8 +98,8 @@ public class Bicycle {
         return modelCommaYear;
     }
 
-    public int getAgeInDays() {
-        return ageInDays;
+    public LocalDate getInstallDate() {
+        return installDate;
     }
 
     public int getDistanceInMeters() {
@@ -104,8 +122,8 @@ public class Bicycle {
         this.modelCommaYear = modelCommaYear;
     }
 
-    public void setAgeInDays(int ageInDays) {
-        this.ageInDays = ageInDays;
+    public void setInstallDate(LocalDate installDate) {
+        this.installDate = installDate;
     }
 
     public void setDistanceInMeters(int distanceInMeters) {

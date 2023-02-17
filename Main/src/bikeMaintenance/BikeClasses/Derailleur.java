@@ -1,28 +1,51 @@
 package bikeMaintenance.BikeClasses;
 
+import java.time.LocalDate;
+
 public class Derailleur {
     private String model;
     private int year;
-    private int ageInDays;
+    private LocalDate installDate;
     private int distanceInMeters;
     private int daysSinceService;
     private int metersSinceService;
+    private int ageInterval;
+    private int distanceInterval;
 
-    public Derailleur(String model, int year, int ageInDays, int distanceInMeters, int daysSinceService, int metersSinceService) {
+    public Derailleur(String model, int year, LocalDate installDate, int distanceInMeters, int daysSinceService,
+                      int metersSinceService, int ageInterval, int distanceInterval) {
         this.model = model;
         this.year = year;
-        this.ageInDays = ageInDays;
+        this.installDate = installDate;
         this.distanceInMeters = distanceInMeters;
         this.daysSinceService = daysSinceService;
         this.metersSinceService = metersSinceService;
+        this.ageInterval = ageInterval;
+        this.distanceInterval = distanceInterval;
     }
 
-    public int getAgeInDays() {
-        return ageInDays;
+    public int getAgeInterval() {
+        return ageInterval;
     }
 
-    public void setAgeInDays(int ageInDays) {
-        this.ageInDays = ageInDays;
+    public void setAgeInterval(int ageInterval) {
+        this.ageInterval = ageInterval;
+    }
+
+    public int getDistanceInterval() {
+        return distanceInterval;
+    }
+
+    public void setDistanceInterval(int distanceInterval) {
+        this.distanceInterval = distanceInterval;
+    }
+
+    public LocalDate getInstallDate() {
+        return installDate;
+    }
+
+    public void setInstallDate(LocalDate installDate) {
+        this.installDate = installDate;
     }
 
     public int getDistanceInMeters() {

@@ -1,22 +1,45 @@
 package bikeMaintenance.BikeClasses;
 
+import java.time.LocalDate;
+
 public class Chain {
     private int distanceInMeters;
-    private int ageInDays;
+    private LocalDate installDate;
     private String modelCommaYear;
     private int speeds;
     private String lubeType;
     private int daysSinceLube;
     private int metersSinceLube;
+    private int ageInterval;
+    private int distanceInterval;
 
-    public Chain(int distanceInMeters, int ageInDays, String modelCommaYear, int speeds, String lubeType, int daysSinceLube, int metersSinceLube) {
+    public Chain(int distanceInMeters, LocalDate installDate, String modelCommaYear, int speeds, String lubeType,
+                 int daysSinceLube, int metersSinceLube, int ageInterval, int distanceInterval) {
         this.distanceInMeters = distanceInMeters;
-        this.ageInDays = ageInDays;
+        this.installDate = installDate;
         this.modelCommaYear = modelCommaYear;
         this.speeds = speeds;
         this.lubeType = lubeType;
         this.daysSinceLube = daysSinceLube;
         this.metersSinceLube = metersSinceLube;
+        this.ageInterval = ageInterval;
+        this.distanceInterval = distanceInterval;
+    }
+
+    public int getAgeInterval() {
+        return ageInterval;
+    }
+
+    public void setAgeInterval(int ageInterval) {
+        this.ageInterval = ageInterval;
+    }
+
+    public int getDistanceInterval() {
+        return distanceInterval;
+    }
+
+    public void setDistanceInterval(int distanceInterval) {
+        this.distanceInterval = distanceInterval;
     }
 
     public int getDistanceInMeters() {
@@ -27,12 +50,12 @@ public class Chain {
         this.distanceInMeters = distanceInMeters;
     }
 
-    public int getAgeInDays() {
-        return ageInDays;
+    public LocalDate getInstallDate() {
+        return installDate;
     }
 
-    public void setAgeInDays(int ageInDays) {
-        this.ageInDays = ageInDays;
+    public void setInstallDate(LocalDate installDate) {
+        this.installDate = installDate;
     }
 
     public String getModelCommaYear() {
