@@ -15,8 +15,11 @@ public class Bicycle {
     private int ageInDays;
     private int distanceInMeters;
     private Map<String, Object> bikePartsList = new HashMap<>();
+    private Map<Integer, Object> bikeServiceList = new HashMap<>();
 
-    public Bicycle(int metersSinceService, int daysSinceService, String name, String type, String manufacturer, String modelCommaYear, int ageInDays, int distanceInMeters) {
+    public Bicycle(int metersSinceService, int daysSinceService, String name, String type, String manufacturer,
+                   String modelCommaYear, int ageInDays, int distanceInMeters, Map<String, Object> bikePartsList,
+                   Map<Integer, Object> bikeServiceList) {
         this.metersSinceService = metersSinceService;
         this.daysSinceService = daysSinceService;
         this.name = name;
@@ -25,6 +28,16 @@ public class Bicycle {
         this.modelCommaYear = modelCommaYear;
         this.ageInDays = ageInDays;
         this.distanceInMeters = distanceInMeters;
+        this.bikePartsList = bikePartsList;
+        this.bikeServiceList = bikeServiceList;
+    }
+
+    public Map<Integer, Object> getBikeServiceList() {
+        return bikeServiceList;
+    }
+
+    public void setBikeServiceList(Map<Integer, Object> bikeServiceList) {
+        this.bikeServiceList = bikeServiceList;
     }
 
     public Map<String, Object> getBikePartsList() {
