@@ -1,6 +1,10 @@
 package bikeMaintenance.BikeClasses;
 
+import bikeMaintenance.Service.ServiceRecord;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Cables {
     private LocalDate installDate;
@@ -9,7 +13,7 @@ public class Cables {
     private int metersSinceService;
     private int ageInterval;
     private int distanceInterval;
-
+    private List<ServiceRecord> serviceRecordList;
     public Cables(LocalDate installDate, int distanceInMeters, int daysSinceService, int metersSinceService, int ageInterval, int distanceInterval) {
         this.installDate = installDate;
         this.distanceInMeters = distanceInMeters;
@@ -17,6 +21,15 @@ public class Cables {
         this.metersSinceService = metersSinceService;
         this.ageInterval = ageInterval;
         this.distanceInterval = distanceInterval;
+        this.serviceRecordList = new ArrayList<>();
+    }
+
+    public List<ServiceRecord> getServiceRecordList() {
+        return serviceRecordList;
+    }
+
+    public void setServiceRecordList(List<ServiceRecord> serviceRecordList) {
+        this.serviceRecordList = serviceRecordList;
     }
 
     public int getAgeInterval() {

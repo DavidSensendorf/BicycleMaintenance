@@ -1,6 +1,12 @@
 package bikeMaintenance.BikeClasses;
 
+import bikeMaintenance.Service.ServiceRecord;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public abstract class BrakingSystem {
     private BrakePad brakePad;
@@ -10,6 +16,7 @@ public abstract class BrakingSystem {
     private int metersSinceService;
     private int ageInterval;
     private int distanceInterval;
+    private List<ServiceRecord> serviceRecordList;
 
     public BrakingSystem(BrakePad brakePad, int distanceInMeters, LocalDate installDate, int daysSinceService, int metersSinceService, int ageInterval, int distanceInterval) {
         this.brakePad = brakePad;
@@ -19,6 +26,16 @@ public abstract class BrakingSystem {
         this.metersSinceService = metersSinceService;
         this.ageInterval = ageInterval;
         this.distanceInterval = distanceInterval;
+        this.serviceRecordList = new ArrayList<>();
+    }
+
+
+    public List<ServiceRecord> getServiceRecordList() {
+        return serviceRecordList;
+    }
+
+    public void setServiceRecordList(List<ServiceRecord> serviceRecordList) {
+        this.serviceRecordList = serviceRecordList;
     }
 
     public int getAgeInterval() {

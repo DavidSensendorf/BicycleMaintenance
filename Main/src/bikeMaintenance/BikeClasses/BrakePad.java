@@ -1,6 +1,10 @@
 package bikeMaintenance.BikeClasses;
 
+import bikeMaintenance.Service.ServiceRecord;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BrakePad {
     private int distanceInMeters;
@@ -10,6 +14,7 @@ public class BrakePad {
     private int daysSinceService;
     private LocalDate installDate;
     private int distanceInterval;
+    private List<ServiceRecord> serviceRecordList;
 
     public BrakePad(int distanceInMeters, int ageInDays, String padType, int metersSinceService, int daysSinceService,
                     LocalDate installDate, int distanceInterval) {
@@ -20,6 +25,15 @@ public class BrakePad {
         this.daysSinceService = daysSinceService;
         this.installDate = installDate;
         this.distanceInterval = distanceInterval;
+        this.serviceRecordList = new ArrayList<>();
+    }
+
+    public List<ServiceRecord> getServiceRecordList() {
+        return serviceRecordList;
+    }
+
+    public void setServiceRecordList(List<ServiceRecord> serviceRecordList) {
+        this.serviceRecordList = serviceRecordList;
     }
 
     public LocalDate getInstallDate() {

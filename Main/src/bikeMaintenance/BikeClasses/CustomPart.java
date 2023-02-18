@@ -1,6 +1,10 @@
 package bikeMaintenance.BikeClasses;
 
+import bikeMaintenance.Service.ServiceRecord;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CustomPart {
     private int distanceInMeters;
@@ -11,6 +15,7 @@ public class CustomPart {
     private int metersSinceService;
     private int ageInterval;
     private int distanceInterval;
+    private List<ServiceRecord> serviceRecordList;
 
     public CustomPart(int distanceInMeters, LocalDate installDate, String modelCommaYear, String partType,
                       int daysSinceService, int metersSinceService, int ageInterval, int distanceInterval) {
@@ -22,6 +27,15 @@ public class CustomPart {
         this.metersSinceService = metersSinceService;
         this.ageInterval = ageInterval;
         this.distanceInterval = distanceInterval;
+        this.serviceRecordList = new ArrayList<>();
+    }
+
+    public List<ServiceRecord> getServiceRecordList() {
+        return serviceRecordList;
+    }
+
+    public void setServiceRecordList(List<ServiceRecord> serviceRecordList) {
+        this.serviceRecordList = serviceRecordList;
     }
 
     public int getDistanceInMeters() {

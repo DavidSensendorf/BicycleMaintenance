@@ -1,6 +1,10 @@
 package bikeMaintenance.BikeClasses;
 
+import bikeMaintenance.Service.ServiceRecord;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Cassette {
     private int distanceInMeters;
@@ -13,6 +17,7 @@ public class Cassette {
     private int daysSinceService;
     private int ageInterval;
     private int distanceInterval;
+    private List<ServiceRecord> serviceRecordList;
 
     public Cassette(int distanceInMeters, LocalDate installDate, int speeds, String modelCommaYear, String size,
                     String gears, int metersSinceService, int daysSinceService, int ageInterval, int distanceInterval) {
@@ -26,6 +31,15 @@ public class Cassette {
         this.daysSinceService = daysSinceService;
         this.ageInterval = ageInterval;
         this.distanceInterval = distanceInterval;
+        this.serviceRecordList = new ArrayList<>();
+    }
+
+    public List<ServiceRecord> getServiceRecordList() {
+        return serviceRecordList;
+    }
+
+    public void setServiceRecordList(List<ServiceRecord> serviceRecordList) {
+        this.serviceRecordList = serviceRecordList;
     }
 
     public int getAgeInterval() {

@@ -1,9 +1,13 @@
 package bikeMaintenance.BikeClasses;
 
+import bikeMaintenance.Service.ServiceRecord;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
-public class Bicycle {
+public class Frame {
     private int metersSinceService;
     private int daysSinceService;
     private String name;
@@ -14,12 +18,10 @@ public class Bicycle {
     private int distanceInMeters;
     private int ageInterval;
     private int distanceInterval;
-    private Map<String, Object> bikePartsList;
-    private Map<String, Object> bikeServiceRecords;
-
-    public Bicycle(int metersSinceService, int daysSinceService, String name, String type, String manufacturer,
-                   String modelCommaYear, LocalDate installDate, int distanceInMeters, int ageInterval, int distanceInterval,
-                   Map<String, Object> bikePartsList, Map<String, Object> bikeServiceRecords) {
+    private List<ServiceRecord> serviceRecordList;
+    public Frame(int metersSinceService, int daysSinceService, String name, String type, String manufacturer,
+                 String modelCommaYear, LocalDate installDate, int distanceInMeters, int ageInterval,
+                 int distanceInterval) {
         this.metersSinceService = metersSinceService;
         this.daysSinceService = daysSinceService;
         this.name = name;
@@ -30,8 +32,15 @@ public class Bicycle {
         this.distanceInMeters = distanceInMeters;
         this.ageInterval = ageInterval;
         this.distanceInterval = distanceInterval;
-        this.bikePartsList = bikePartsList;
-        this.bikeServiceRecords = bikeServiceRecords;
+        this.serviceRecordList = new ArrayList<>();
+    }
+
+    public List<ServiceRecord> getServiceRecordList() {
+        return serviceRecordList;
+    }
+
+    public void setServiceRecordList(List<ServiceRecord> serviceRecordList) {
+        this.serviceRecordList = serviceRecordList;
     }
 
     public int getAgeInterval() {
@@ -48,22 +57,6 @@ public class Bicycle {
 
     public void setDistanceInterval(int distanceInterval) {
         this.distanceInterval = distanceInterval;
-    }
-
-    public Map<String, Object> getBikeServiceRecords() {
-        return bikeServiceRecords;
-    }
-
-    public void setBikeServiceRecords(Map<String, Object> bikeServiceRecords) {
-        this.bikeServiceRecords = bikeServiceRecords;
-    }
-
-    public Map<String, Object> getBikePartsList() {
-        return bikePartsList;
-    }
-
-    public void setBikePartsList(Map<String, Object> bikePartsList) {
-        this.bikePartsList = bikePartsList;
     }
 
     public int getMetersSinceService() {

@@ -1,6 +1,10 @@
 package bikeMaintenance.BikeClasses;
 
+import bikeMaintenance.Service.ServiceRecord;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Wheel {
     private String modelCommaYear;
@@ -12,7 +16,7 @@ public class Wheel {
     private int daysSinceService;
     private int ageInterval;
     private int distanceInterval;
-
+    private List<ServiceRecord> serviceRecordList;
     public Wheel(String modelCommaYear, int distanceInMeters, LocalDate installDate, String size, String material,
                  int metersSinceService, int daysSinceService, int ageInterval, int distanceInterval) {
         this.modelCommaYear = modelCommaYear;
@@ -24,6 +28,15 @@ public class Wheel {
         this.daysSinceService = daysSinceService;
         this.ageInterval = ageInterval;
         this.distanceInterval = distanceInterval;
+        this.serviceRecordList = new ArrayList<>();
+    }
+
+    public List<ServiceRecord> getServiceRecordList() {
+        return serviceRecordList;
+    }
+
+    public void setServiceRecordList(List<ServiceRecord> serviceRecordList) {
+        this.serviceRecordList = serviceRecordList;
     }
 
     public int getAgeInterval() {
