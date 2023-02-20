@@ -1,8 +1,11 @@
 package bikeMaintenance.UserData;
 
 import bikeMaintenance.BikeClasses.*;
+import bikeMaintenance.Service.ServiceRecord;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Bicycle {
@@ -17,6 +20,7 @@ public class Bicycle {
     private Map<String,DiscBrakes> discBrakesMap;
     private Map<String,Tire> tireMap;
     private Map<String,Wheel> wheelMap;
+    private List<ServiceRecord> serviceRecordList;
 
     public Bicycle(Frame bicycleFrame) {
         this.bicycleFrame = bicycleFrame;
@@ -30,6 +34,15 @@ public class Bicycle {
         this.discBrakesMap = new HashMap<>();
         this.tireMap = new HashMap<>();
         this.wheelMap = new HashMap<>();
+        this.serviceRecordList = new ArrayList<>();
+    }
+
+    public List<ServiceRecord> getServiceRecordList() {
+        return serviceRecordList;
+    }
+
+    public void setServiceRecordList(List<ServiceRecord> serviceRecordList) {
+        this.serviceRecordList = serviceRecordList;
     }
 
     public Frame getBicycleFrame() {
