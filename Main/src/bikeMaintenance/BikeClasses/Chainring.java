@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Chainring {
+    private int chainringId;
     private int distanceInMeters;
     private LocalDate installDate;
     private String size;
@@ -17,6 +18,24 @@ public class Chainring {
     private int ageInterval;
     private int distanceInterval;
     private List<ServiceRecord> serviceRecordList;
+    private String name;
+    private int bicycleId;
+
+    public int getBicycleId() {
+        return bicycleId;
+    }
+
+    public void setBicycleId(int bicycleId) {
+        this.bicycleId = bicycleId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Chainring(int distanceInMeters, LocalDate installDate, String size, String modelCommaYear, int speeds,
                      int daysSinceService, int metersSinceService, int ageInterval, int distanceInterval) {
@@ -30,6 +49,14 @@ public class Chainring {
         this.ageInterval = ageInterval;
         this.distanceInterval = distanceInterval;
         this.serviceRecordList = new ArrayList<>();
+    }
+
+    public int getChainringId() {
+        return chainringId;
+    }
+
+    public void setChainringId(int chainringId) {
+        this.chainringId = chainringId;
     }
 
     public List<ServiceRecord> getServiceRecordList() {

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cassette {
+    private int cassetteId;
     private int distanceInMeters;
     private LocalDate installDate;
     private int speeds;
@@ -18,6 +19,24 @@ public class Cassette {
     private int ageInterval;
     private int distanceInterval;
     private List<ServiceRecord> serviceRecordList;
+    private String name;
+    private int bicycleId;
+
+    public int getBicycleId() {
+        return bicycleId;
+    }
+
+    public void setBicycleId(int bicycleId) {
+        this.bicycleId = bicycleId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Cassette(int distanceInMeters, LocalDate installDate, int speeds, String modelCommaYear, String size,
                     String gears, int metersSinceService, int daysSinceService, int ageInterval, int distanceInterval) {
@@ -32,6 +51,14 @@ public class Cassette {
         this.ageInterval = ageInterval;
         this.distanceInterval = distanceInterval;
         this.serviceRecordList = new ArrayList<>();
+    }
+
+    public int getCassetteId() {
+        return cassetteId;
+    }
+
+    public void setCassetteId(int cassetteId) {
+        this.cassetteId = cassetteId;
     }
 
     public List<ServiceRecord> getServiceRecordList() {

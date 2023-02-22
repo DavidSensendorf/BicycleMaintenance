@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Derailleur {
+    private int derailleurId;
     private String model;
     private int year;
     private LocalDate installDate;
@@ -16,6 +17,24 @@ public class Derailleur {
     private int ageInterval;
     private int distanceInterval;
     private List<ServiceRecord> serviceRecordList;
+    private String name;
+    private int bicycleId;
+
+    public int getBicycleId() {
+        return bicycleId;
+    }
+
+    public void setBicycleId(int bicycleId) {
+        this.bicycleId = bicycleId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Derailleur(String model, int year, LocalDate installDate, int distanceInMeters, int daysSinceService,
                       int metersSinceService, int ageInterval, int distanceInterval) {
@@ -28,6 +47,14 @@ public class Derailleur {
         this.ageInterval = ageInterval;
         this.distanceInterval = distanceInterval;
         this.serviceRecordList = new ArrayList<>();
+    }
+
+    public int getDerailleurId() {
+        return derailleurId;
+    }
+
+    public void setDerailleurId(int derailleurId) {
+        this.derailleurId = derailleurId;
     }
 
     public List<ServiceRecord> getServiceRecordList() {

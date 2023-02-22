@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cables {
+    private int cablesId;
     private LocalDate installDate;
     private int distanceInMeters;
     private int daysSinceService;
@@ -14,6 +15,24 @@ public class Cables {
     private int ageInterval;
     private int distanceInterval;
     private List<ServiceRecord> serviceRecordList;
+    private String name;
+    private int bicycleId;
+
+    public int getBicycleId() {
+        return bicycleId;
+    }
+
+    public void setBicycleId(int bicycleId) {
+        this.bicycleId = bicycleId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
     public Cables(LocalDate installDate, int distanceInMeters, int daysSinceService, int metersSinceService, int ageInterval, int distanceInterval) {
         this.installDate = installDate;
         this.distanceInMeters = distanceInMeters;
@@ -22,6 +41,14 @@ public class Cables {
         this.ageInterval = ageInterval;
         this.distanceInterval = distanceInterval;
         this.serviceRecordList = new ArrayList<>();
+    }
+
+    public int getCablesId() {
+        return cablesId;
+    }
+
+    public void setCablesId(int cablesId) {
+        this.cablesId = cablesId;
     }
 
     public List<ServiceRecord> getServiceRecordList() {

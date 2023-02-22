@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Wheel {
+    private int wheelId;
     private String modelCommaYear;
     private int distanceInMeters;
     private LocalDate installDate;
@@ -17,6 +18,24 @@ public class Wheel {
     private int ageInterval;
     private int distanceInterval;
     private List<ServiceRecord> serviceRecordList;
+    private String name;
+    private int bicycleId;
+
+    public int getBicycleId() {
+        return bicycleId;
+    }
+
+    public void setBicycleId(int bicycleId) {
+        this.bicycleId = bicycleId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
     public Wheel(String modelCommaYear, int distanceInMeters, LocalDate installDate, String size, String material,
                  int metersSinceService, int daysSinceService, int ageInterval, int distanceInterval) {
         this.modelCommaYear = modelCommaYear;
@@ -29,6 +48,14 @@ public class Wheel {
         this.ageInterval = ageInterval;
         this.distanceInterval = distanceInterval;
         this.serviceRecordList = new ArrayList<>();
+    }
+
+    public int getWheelId() {
+        return wheelId;
+    }
+
+    public void setWheelId(int wheelId) {
+        this.wheelId = wheelId;
     }
 
     public List<ServiceRecord> getServiceRecordList() {

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BrakePad {
+    private int brakePadId;
     private int distanceInMeters;
     private int ageInDays;
     private String padType;
@@ -15,6 +16,24 @@ public class BrakePad {
     private LocalDate installDate;
     private int distanceInterval;
     private List<ServiceRecord> serviceRecordList;
+    private String name;
+    private int bicycleId;
+
+    public int getBicycleId() {
+        return bicycleId;
+    }
+
+    public void setBicycleId(int bicycleId) {
+        this.bicycleId = bicycleId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public BrakePad(int distanceInMeters, int ageInDays, String padType, int metersSinceService, int daysSinceService,
                     LocalDate installDate, int distanceInterval) {
@@ -26,6 +45,14 @@ public class BrakePad {
         this.installDate = installDate;
         this.distanceInterval = distanceInterval;
         this.serviceRecordList = new ArrayList<>();
+    }
+
+    public int getBrakePadId() {
+        return brakePadId;
+    }
+
+    public void setBrakePadId(int brakePadId) {
+        this.brakePadId = brakePadId;
     }
 
     public List<ServiceRecord> getServiceRecordList() {

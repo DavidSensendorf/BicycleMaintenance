@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Frame {
+    private int frameId;
     private int metersSinceService;
     private int daysSinceService;
     private String name;
@@ -18,6 +19,16 @@ public class Frame {
     private int ageInterval;
     private int distanceInterval;
     private List<ServiceRecord> serviceRecordList;
+    private int bicycleId;
+
+    public int getBicycleId() {
+        return bicycleId;
+    }
+
+    public void setBicycleId(int bicycleId) {
+        this.bicycleId = bicycleId;
+    }
+
     public Frame(int metersSinceService, int daysSinceService, String name, String type, String manufacturer,
                  String modelCommaYear, LocalDate installDate, int distanceInMeters, int ageInterval,
                  int distanceInterval) {
@@ -32,6 +43,14 @@ public class Frame {
         this.ageInterval = ageInterval;
         this.distanceInterval = distanceInterval;
         this.serviceRecordList = new ArrayList<>();
+    }
+
+    public int getFrameId() {
+        return frameId;
+    }
+
+    public void setFrameId(int frameId) {
+        this.frameId = frameId;
     }
 
     public List<ServiceRecord> getServiceRecordList() {

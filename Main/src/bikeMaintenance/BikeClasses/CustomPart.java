@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomPart {
+    private int customPartId;
     private int distanceInMeters;
     private LocalDate installDate;
     private String modelCommaYear;
@@ -16,6 +17,24 @@ public class CustomPart {
     private int ageInterval;
     private int distanceInterval;
     private List<ServiceRecord> serviceRecordList;
+    private String name;
+    private int bicycleId;
+
+    public int getBicycleId() {
+        return bicycleId;
+    }
+
+    public void setBicycleId(int bicycleId) {
+        this.bicycleId = bicycleId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public CustomPart(int distanceInMeters, LocalDate installDate, String modelCommaYear, String partType,
                       int daysSinceService, int metersSinceService, int ageInterval, int distanceInterval) {
@@ -28,6 +47,14 @@ public class CustomPart {
         this.ageInterval = ageInterval;
         this.distanceInterval = distanceInterval;
         this.serviceRecordList = new ArrayList<>();
+    }
+
+    public int getCustomPartId() {
+        return customPartId;
+    }
+
+    public void setCustomPartId(int customPartId) {
+        this.customPartId = customPartId;
     }
 
     public List<ServiceRecord> getServiceRecordList() {

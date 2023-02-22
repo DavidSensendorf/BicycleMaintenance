@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Bicycle {
+    private int bicycleId;
     private Frame bicycleFrame;
     private Map<String, BrakePad> brakePadMap;
     private Map<String, Cables> cablesMap;
@@ -35,6 +36,14 @@ public class Bicycle {
         this.tireMap = new HashMap<>();
         this.wheelMap = new HashMap<>();
         this.serviceRecordList = new ArrayList<>();
+    }
+
+    public int getBicycleId() {
+        return bicycleId;
+    }
+
+    public void setBicycleId(int bicycleId) {
+        this.bicycleId = bicycleId;
     }
 
     public List<ServiceRecord> getServiceRecordList() {

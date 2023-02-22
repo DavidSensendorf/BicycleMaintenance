@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tire {
+    private int tireId;
     private String modelCommaYear;
     private int distanceInMeters;
     private LocalDate installDate;
@@ -19,6 +20,24 @@ public class Tire {
     private int ageInterval;
     private int distanceInterval;
     private List<ServiceRecord> serviceRecordList;
+    private String name;
+    private int bicycleId;
+
+    public int getBicycleId() {
+        return bicycleId;
+    }
+
+    public void setBicycleId(int bicycleId) {
+        this.bicycleId = bicycleId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Tire(String modelCommaYear, int distanceInMeters, LocalDate installDate, String size, String type,
                 int sealantAgeInDays, boolean isTubeless, int daysSinceService, int metersSinceService, int ageInterval,
@@ -35,6 +54,14 @@ public class Tire {
         this.ageInterval = ageInterval;
         this.distanceInterval = distanceInterval;
         this.serviceRecordList = new ArrayList<>();
+    }
+
+    public int getTireId() {
+        return tireId;
+    }
+
+    public void setTireId(int tireId) {
+        this.tireId = tireId;
     }
 
     public List<ServiceRecord> getServiceRecordList() {
