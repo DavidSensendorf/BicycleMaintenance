@@ -1,4 +1,4 @@
-package bikeMaintenance.Service;
+package bikemaintenance.service;
 
 public class SuggestedIntervals {
 

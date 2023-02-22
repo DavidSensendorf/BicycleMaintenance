@@ -1,4 +1,4 @@
-package bikeMaintenance;
+package bikemaintenance;
 
 import java.time.LocalDate;
 

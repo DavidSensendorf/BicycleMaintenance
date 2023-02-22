@@ -1,6 +1,4 @@
-package bikeMaintenance.Service;
-
-import java.math.BigDecimal;
+package bikemaintenance.service;
 
 public class ServiceRecord {
 

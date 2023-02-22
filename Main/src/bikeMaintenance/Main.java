@@ -1,14 +1,12 @@
-package bikeMaintenance;
+package bikemaintenance;
 
 
-import bikeMaintenance.BikeClasses.Frame;
-import bikeMaintenance.BikeClasses.Chain;
-import bikeMaintenance.Service.ServiceRecord;
-import bikeMaintenance.UserData.Bicycle;
+import bikemaintenance.bikeclasses.Frame;
+import bikemaintenance.bikeclasses.Chain;
+import bikemaintenance.service.ServiceRecord;
+import bikemaintenance.userdata.Bicycle;
 
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {

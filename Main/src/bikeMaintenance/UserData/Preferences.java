@@ -1,4 +1,4 @@
 package bikemaintenance.userdata;
 
-public class User {
+public class Preferences {
 }

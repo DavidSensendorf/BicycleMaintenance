@@ -1,7 +1,7 @@
-package bikeMaintenance.UserData;
+package bikemaintenance.userdata;
 
-import bikeMaintenance.BikeClasses.*;
-import bikeMaintenance.Service.ServiceRecord;
+import bikemaintenance.bikeclasses.*;
+import bikemaintenance.service.ServiceRecord;
 
 import java.util.ArrayList;
 import java.util.HashMap;

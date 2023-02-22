@@ -36,7 +36,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "11",
     "last_directory_selection": "C:/Users/Student/workspace/personal/BicycleMaintenance/Main/src",
-    "last_opened_file_path": "C:/Users/Student/workspace/david-sensendorf-student-code/java/module2/03_Joins/exercise",
+    "last_opened_file_path": "C:/Users/Student/workspace/personal/BicycleMaintenance",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -44,16 +44,17 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="bikemaintenance.dao.bikeClasses" />
       <recent name="Main" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="bikeMaintenance.Main" />
+      <option name="MAIN_CLASS_NAME" value="bikemaintenance.Main" />
       <module name="BicycleMaintenance" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="bikeMaintenance.*" />
+          <option name="PATTERN" value="bikemaintenance.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

@@ -1,12 +1,10 @@
-package bikeMaintenance.BikeClasses;
+package bikemaintenance.bikeclasses;
 
-import bikeMaintenance.Service.ServiceRecord;
+import bikemaintenance.service.ServiceRecord;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Chainring {
     private int distanceInMeters;

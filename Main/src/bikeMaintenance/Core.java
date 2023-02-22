@@ -1,4 +1,4 @@
-package bikeMaintenance;
+package bikemaintenance;
 
 public class Core {
 
