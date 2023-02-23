@@ -21,6 +21,7 @@ public class Tire {
     private int distanceInterval;
     private List<ServiceRecord> serviceRecordList;
     private String name;
+    private boolean isFront;
     private int bicycleId;
 
     public int getBicycleId() {
@@ -37,6 +38,14 @@ public class Tire {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isFront() {
+        return isFront;
+    }
+
+    public void setFront(boolean front) {
+        isFront = front;
     }
 
     public Tire(String modelCommaYear, int distanceInMeters, LocalDate installDate, String size, String type,

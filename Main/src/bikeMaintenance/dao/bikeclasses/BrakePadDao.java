@@ -5,6 +5,10 @@ import bikemaintenance.bikeclasses.BrakePad;
 import java.util.List;
 
 public interface BrakePadDao {
-    BrakePad getBrakePad(int brakePadId);
-    List<BrakePad> getAllBrakePads(int bicycleId);
+    public BrakePad getBrakePad(int brakePadId);
+    public List<BrakePad> getAllBrakePads(int bicycleId);
+    public BrakePad createBrakePad(BrakePad brakePad);
+    public void updateBrakePad(BrakePad updatedBrakePad);
+    public void deleteBrakePad(int brakePadId);
+
 }

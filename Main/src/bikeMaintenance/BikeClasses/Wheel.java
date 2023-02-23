@@ -19,6 +19,7 @@ public class Wheel {
     private int distanceInterval;
     private List<ServiceRecord> serviceRecordList;
     private String name;
+    private boolean isFront;
     private int bicycleId;
 
     public int getBicycleId() {
@@ -36,6 +37,15 @@ public class Wheel {
     public void setName(String name) {
         this.name = name;
     }
+
+    public boolean isFront() {
+        return isFront;
+    }
+
+    public void setFront(boolean front) {
+        isFront = front;
+    }
+
     public Wheel(String modelCommaYear, int distanceInMeters, LocalDate installDate, String size, String material,
                  int metersSinceService, int daysSinceService, int ageInterval, int distanceInterval) {
         this.modelCommaYear = modelCommaYear;

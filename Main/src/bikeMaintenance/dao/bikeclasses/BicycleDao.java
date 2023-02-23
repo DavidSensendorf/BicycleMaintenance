@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface BicycleDao {
 
-    Bicycle getBicycle(int bicycleId);
-    List<Bicycle> getAllUserBicycles(int userId);
-    Bicycle createBicycle(Bicycle bicycle);
-    void updateBicycle(Bicycle bicycle);
-    void deleteBicycle(int bicycleId);
+    public Bicycle getBicycle(int bicycleId);
+    public List<Bicycle> getAllUserBicycles(int userId);
+    public Bicycle createBicycle(Bicycle bicycle);
+    public void updateBicycle(Bicycle updatedBicycle);
+    public void deleteBicycle(int bicycleId);
 }
