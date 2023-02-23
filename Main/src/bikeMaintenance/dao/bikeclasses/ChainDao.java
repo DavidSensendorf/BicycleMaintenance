@@ -10,9 +10,5 @@ public interface ChainDao {
     public Chain createChain(Chain chain);
     public void updateChain(Chain updatedChain);
     public void deleteChain(int chainId);
-    // get  object (objectId)
-    // get all  list<object> (int id)
-    // create object (object)
-    // update void (object)
-    // delete void (int objectId)
+
 }
