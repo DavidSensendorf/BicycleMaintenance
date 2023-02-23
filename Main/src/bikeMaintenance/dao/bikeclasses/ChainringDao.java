@@ -6,4 +6,5 @@ public interface ChainringDao {
     // create object (object)
     // update void (object)
     // delete void (int objectId)
+
 }
