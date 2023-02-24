@@ -5,10 +5,10 @@ import bikemaintenance.bikeclasses.Chain;
 import java.util.List;
 
 public interface ChainDao {
-    public Chain getChain(int chainId);
-    public List<Chain> getAllChains(int bikeId);
-    public Chain createChain(Chain chain);
-    public void updateChain(Chain updatedChain);
-    public void deleteChain(int chainId);
+    Chain getChain(int chainId);
+    List<Chain> getAllChains(int bicycleId);
+    Chain createChain(Chain chain);
+    void updateChain(Chain updatedChain);
+    void deleteChain(int chainId);
 
 }

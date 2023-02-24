@@ -18,16 +18,8 @@ public class Frame {
     private int distanceInMeters;
     private int ageInterval;
     private int distanceInterval;
+    private int age;
     private List<ServiceRecord> serviceRecordList;
-    private int bicycleId;
-
-    public int getBicycleId() {
-        return bicycleId;
-    }
-
-    public void setBicycleId(int bicycleId) {
-        this.bicycleId = bicycleId;
-    }
 
     public Frame(int metersSinceService, int daysSinceService, String name, String type, String manufacturer,
                  String modelCommaYear, LocalDate installDate, int distanceInMeters, int ageInterval,
@@ -43,6 +35,14 @@ public class Frame {
         this.ageInterval = ageInterval;
         this.distanceInterval = distanceInterval;
         this.serviceRecordList = new ArrayList<>();
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public int getFrameId() {

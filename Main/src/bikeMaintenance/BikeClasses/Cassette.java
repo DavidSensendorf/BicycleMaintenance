@@ -8,19 +8,20 @@ import java.util.List;
 
 public class Cassette {
     private int cassetteId;
+    private int bicycleId;
+    private String name;
     private int distanceInMeters;
     private LocalDate installDate;
     private int speeds;
     private String modelCommaYear;
     private String size;
-    private String gears;
     private int metersSinceService;
     private int daysSinceService;
     private int ageInterval;
     private int distanceInterval;
     private List<ServiceRecord> serviceRecordList;
-    private String name;
-    private int bicycleId;
+
+
 
     public int getBicycleId() {
         return bicycleId;
@@ -45,7 +46,6 @@ public class Cassette {
         this.speeds = speeds;
         this.modelCommaYear = modelCommaYear;
         this.size = size;
-        this.gears = gears;
         this.metersSinceService = metersSinceService;
         this.daysSinceService = daysSinceService;
         this.ageInterval = ageInterval;
@@ -83,14 +83,6 @@ public class Cassette {
 
     public void setDistanceInterval(int distanceInterval) {
         this.distanceInterval = distanceInterval;
-    }
-
-    public String getGears() {
-        return gears;
-    }
-
-    public void setGears(String gears) {
-        this.gears = gears;
     }
 
     public int getMetersSinceService() {

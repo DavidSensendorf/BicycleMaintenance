@@ -8,6 +8,8 @@ import java.util.List;
 
 public class Cables {
     private int cablesId;
+    private int bicycleId;
+    private String name;
     private LocalDate installDate;
     private int distanceInMeters;
     private int daysSinceService;
@@ -15,8 +17,8 @@ public class Cables {
     private int ageInterval;
     private int distanceInterval;
     private List<ServiceRecord> serviceRecordList;
-    private String name;
-    private int bicycleId;
+
+
 
     public int getBicycleId() {
         return bicycleId;

@@ -21,6 +21,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2LbrsXUMIiWDvWdAgVNcnHJuxKs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -36,13 +43,17 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "11",
     "last_directory_selection": "C:/Users/Student/workspace/personal/BicycleMaintenance/Main/src",
-    "last_opened_file_path": "C:/Users/Student/workspace/personal/BicycleMaintenance",
-    "project.structure.last.edited": "Modules",
+    "last_opened_file_path": "C:/Users/Student/workspace/personal/BicycleMaintenance/database",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Student\workspace\personal\BicycleMaintenance\database" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="bikemaintenance.dao.bikeClasses" />
       <recent name="Main" />

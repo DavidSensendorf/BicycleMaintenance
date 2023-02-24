@@ -20,6 +20,7 @@ public class Chain {
     private List<ServiceRecord> serviceRecordList;
     private String name;
     private int bicycleId;
+    private boolean isWaxed;
 
     public int getBicycleId() {
         return bicycleId;
@@ -49,6 +50,14 @@ public class Chain {
         this.ageInterval = ageInterval;
         this.distanceInterval = distanceInterval;
         this.serviceRecordList = new ArrayList<>();
+    }
+
+    public boolean isWaxed() {
+        return isWaxed;
+    }
+
+    public void setWaxed(boolean waxed) {
+        isWaxed = waxed;
     }
 
     public int getChainId() {

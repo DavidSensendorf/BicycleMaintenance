@@ -11,6 +11,7 @@ import java.util.Map;
 public class Bicycle {
     private int bicycleId;
     private Frame bicycleFrame;
+    private String bicycleName;
     private Map<String, BrakePad> brakePadMap;
     private Map<String, Cables> cablesMap;
     private Map<String, Cassette> cassetteMap;
@@ -36,6 +37,14 @@ public class Bicycle {
         this.tireMap = new HashMap<>();
         this.wheelMap = new HashMap<>();
         this.serviceRecordList = new ArrayList<>();
+    }
+
+    public String getBicycleName() {
+        return bicycleName;
+    }
+
+    public void setBicycleName(String bicycleName) {
+        this.bicycleName = bicycleName;
     }
 
     public int getBicycleId() {

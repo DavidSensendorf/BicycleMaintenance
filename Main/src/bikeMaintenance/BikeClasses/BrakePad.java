@@ -8,6 +8,8 @@ import java.util.List;
 
 public class BrakePad {
     private int brakePadId;
+    private int bicycleId;
+    private String name;
     private int distanceInMeters;
     private int ageInDays;
     private String padType;
@@ -15,9 +17,18 @@ public class BrakePad {
     private int daysSinceService;
     private LocalDate installDate;
     private int distanceInterval;
+
+    private int ageInterval;
     private List<ServiceRecord> serviceRecordList;
-    private String name;
-    private int bicycleId;
+
+
+    public int getAgeInterval() {
+        return ageInterval;
+    }
+
+    public void setAgeInterval(int ageInterval) {
+        this.ageInterval = ageInterval;
+    }
 
     public int getBicycleId() {
         return bicycleId;
