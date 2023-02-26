@@ -1,6 +1,8 @@
 BEGIN TRANSACTION;
 
-DROP TABLE IF EXISTS bicycle, cyclist, brake_pad, cables, cassette, chainring, custom_part, derailleur, disc_brakes,
+
+
+DROP TABLE IF EXISTS bicycle, brake_pad, cables, cassette, bicycle_chain, chainring, custom_part, cyclist, derailleur, disc_brakes,
 frame, rim_brakes, tire, wheel CASCADE;
 
 CREATE TABLE cyclist (
@@ -19,8 +21,12 @@ CREATE TABLE frame (
     manufacturer varchar(50),
     model varchar(50),
     manufacture_year int,
-    CONSTRAINT PK_cables PRIMARY KEY (cables_id),
+    type varchar(50),
+    material varchar(50),
+    frame_size_cm int,
+    CONSTRAINT PK_frame PRIMARY KEY (frame_id)
 );
+
 
 CREATE TABLE bicycle (
     bicycle_id int GENERATED ALWAYS AS IDENTITY,
@@ -30,6 +36,7 @@ CREATE TABLE bicycle (
     CONSTRAINT PK_bicycle PRIMARY KEY (bicycle_id),
     CONSTRAINT FK_cyclist_bicycle FOREIGN KEY (cyclist_id) REFERENCES cyclist(cyclist_id)
 );
+
 
 CREATE TABLE brake_pad (
     brake_pad_id int GENERATED ALWAYS AS IDENTITY,
@@ -79,7 +86,7 @@ CREATE TABLE cassette (
     CONSTRAINT FK_casstte_bicycle FOREIGN KEY (bicycle_id) REFERENCES bicycle(bicycle_id)
 );
 
-CREATE TABLE chain (
+CREATE TABLE bicycle_chain (
     chain_id int GENERATED ALWAYS AS IDENTITY,
     bicycle_id int REFERENCES bicycle(bicycle_id),
     name varchar(100) NOT NULL,
@@ -110,7 +117,7 @@ CREATE TABLE chainring (
     manufacture_year int,
     gear_size varchar(50),
     speeds int,
-    CONSTRAINT PK_ PRIMARY KEY (_id),
+    CONSTRAINT PK_chainring PRIMARY KEY (chainring_id),
     CONSTRAINT FK_cables_bicycle FOREIGN KEY (bicycle_id) REFERENCES bicycle(bicycle_id)
 );
 
@@ -129,8 +136,8 @@ CREATE TABLE custom_part (
     CONSTRAINT FK_custom_part_bicycle FOREIGN KEY (bicycle_id) REFERENCES bicycle(bicycle_id)
 );
 
-CREATE TABLE  (
-    _id int GENERATED ALWAYS AS IDENTITY,
+CREATE TABLE derailleur (
+    derailleur_id int GENERATED ALWAYS AS IDENTITY,
     bicycle_id int REFERENCES bicycle(bicycle_id),
     name varchar(100) NOT NULL,
     install_date DATE,
@@ -140,12 +147,14 @@ CREATE TABLE  (
     manufacturer varchar(50),
     model varchar(50),
     manufacture_year int,
-    CONSTRAINT PK_ PRIMARY KEY (_id),
-    CONSTRAINT FK_ FOREIGN KEY (bicycle_id) REFERENCES bicycle(bicycle_id)
+    speeds int,
+    electronic boolean,
+    CONSTRAINT PK_derailleur PRIMARY KEY (derailleur_id),
+    CONSTRAINT FK_derailleur_bicycle FOREIGN KEY (bicycle_id) REFERENCES bicycle(bicycle_id)
 );
 
-CREATE TABLE  (
-    _id int GENERATED ALWAYS AS IDENTITY,
+CREATE TABLE disc_brakes (
+    disc_brakes_id int GENERATED ALWAYS AS IDENTITY,
     bicycle_id int REFERENCES bicycle(bicycle_id),
     name varchar(100) NOT NULL,
     install_date DATE,
@@ -155,12 +164,12 @@ CREATE TABLE  (
     manufacturer varchar(50),
     model varchar(50),
     manufacture_year int,
-    CONSTRAINT PK_ PRIMARY KEY (_id),
-    CONSTRAINT FK_ FOREIGN KEY (bicycle_id) REFERENCES bicycle(bicycle_id)
+    CONSTRAINT PK_disc_brakes PRIMARY KEY (disc_brakes_id),
+    CONSTRAINT FK_disc_brakes_bicycle FOREIGN KEY (bicycle_id) REFERENCES bicycle(bicycle_id)
 );
 
-CREATE TABLE  (
-    _id int GENERATED ALWAYS AS IDENTITY,
+CREATE TABLE rim_brakes (
+    rim_brakes_id int GENERATED ALWAYS AS IDENTITY,
     bicycle_id int REFERENCES bicycle(bicycle_id),
     name varchar(100) NOT NULL,
     install_date DATE,
@@ -170,12 +179,12 @@ CREATE TABLE  (
     manufacturer varchar(50),
     model varchar(50),
     manufacture_year int,
-    CONSTRAINT PK_ PRIMARY KEY (_id),
-    CONSTRAINT FK_ FOREIGN KEY (bicycle_id) REFERENCES bicycle(bicycle_id)
+    CONSTRAINT PK_rim_brakes PRIMARY KEY (rim_brakes_id),
+    CONSTRAINT FK_rim_brakes_bicycle FOREIGN KEY (bicycle_id) REFERENCES bicycle(bicycle_id)
 );
 
-CREATE TABLE  (
-    _id int GENERATED ALWAYS AS IDENTITY,
+CREATE TABLE tire (
+    tire_id int GENERATED ALWAYS AS IDENTITY,
     bicycle_id int REFERENCES bicycle(bicycle_id),
     name varchar(100) NOT NULL,
     install_date DATE,
@@ -185,12 +194,15 @@ CREATE TABLE  (
     manufacturer varchar(50),
     model varchar(50),
     manufacture_year int,
-    CONSTRAINT PK_ PRIMARY KEY (_id),
-    CONSTRAINT FK_ FOREIGN KEY (bicycle_id) REFERENCES bicycle(bicycle_id)
+    tubeless boolean,
+    type varchar(50),
+    front boolean,
+    CONSTRAINT PK_tire PRIMARY KEY (tire_id),
+    CONSTRAINT FK_tire_bicycle FOREIGN KEY (bicycle_id) REFERENCES bicycle(bicycle_id)
 );
 
-CREATE TABLE  (
-    _id int GENERATED ALWAYS AS IDENTITY,
+CREATE TABLE wheel (
+    wheel_id int GENERATED ALWAYS AS IDENTITY,
     bicycle_id int REFERENCES bicycle(bicycle_id),
     name varchar(100) NOT NULL,
     install_date DATE,
@@ -200,38 +212,26 @@ CREATE TABLE  (
     manufacturer varchar(50),
     model varchar(50),
     manufacture_year int,
-    CONSTRAINT PK_ PRIMARY KEY (_id),
-    CONSTRAINT FK_ FOREIGN KEY (bicycle_id) REFERENCES bicycle(bicycle_id)
-);
-
-CREATE TABLE  (
-    _id int GENERATED ALWAYS AS IDENTITY,
-    bicycle_id int REFERENCES bicycle(bicycle_id),
-    name varchar(100) NOT NULL,
-    install_date DATE,
-    distance_in_meters int,
-    age_interval int,
-    distance_interval int,
-    manufacturer varchar(50),
-    model varchar(50),
-    manufacture_year int,
-    CONSTRAINT PK_ PRIMARY KEY (_id),
-    CONSTRAINT FK_ FOREIGN KEY (bicycle_id) REFERENCES bicycle(bicycle_id)
-);
-
-CREATE TABLE  (
-    _id int GENERATED ALWAYS AS IDENTITY,
-    bicycle_id int REFERENCES bicycle(bicycle_id),
-    name varchar(100) NOT NULL,
-    install_date DATE,
-    distance_in_meters int,
-    age_interval int,
-    distance_interval int,
-    manufacturer varchar(50),
-    model varchar(50),
-    manufacture_year int,
-    CONSTRAINT PK_ PRIMARY KEY (_id),
-    CONSTRAINT FK_ FOREIGN KEY (bicycle_id) REFERENCES bicycle(bicycle_id)
+    front boolean,
+    type varchar(50),
+    material varchar(50),
+    CONSTRAINT PK_wheel PRIMARY KEY (wheel_id),
+    CONSTRAINT FK_wheel_bicycle FOREIGN KEY (bicycle_id) REFERENCES bicycle(bicycle_id)
 );
 
 COMMIT;
+
+--CREATE TABLE  (
+--    _id int GENERATED ALWAYS AS IDENTITY,
+--    bicycle_id int REFERENCES bicycle(bicycle_id),
+--    name varchar(100) NOT NULL,
+--    install_date DATE,
+--    distance_in_meters int,
+--    age_interval int,
+--    distance_interval int,
+--    manufacturer varchar(50),
+--    model varchar(50),
+--    manufacture_year int,
+--    CONSTRAINT PK_ PRIMARY KEY (_id),
+--    CONSTRAINT FK_ FOREIGN KEY (bicycle_id) REFERENCES bicycle(bicycle_id)
+--);

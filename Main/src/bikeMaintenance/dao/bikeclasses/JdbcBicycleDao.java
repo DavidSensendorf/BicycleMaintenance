@@ -10,7 +10,11 @@ import java.util.List;
 
 public class JdbcBicycleDao implements BicycleDao {
 
+    private final JdbcTemplate jdbcTemplate;
 
+    public JdbcBicycleDao(DataSource dataSource) {
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
+    }
 
     @Override
     public Bicycle getBicycle(int bicycleId) {
@@ -18,27 +22,51 @@ public class JdbcBicycleDao implements BicycleDao {
         String sql = "Select * " +
                      "FROM bicycle" +
                      "WHERE bicycleId = ?;";
-        //SqlRowSet
-                return bicycle;
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, bicycleId);
+        if (results.next()) {
+            bicycle = mapRowToBicycle(results);
+        }
+        return bicycle;
     }
 
     @Override
     public List<Bicycle> getAllUserBicycles(int userId) {
-        return null;
+        List<Bicycle> bicycleList = new ArrayList<>();
+        String sql = "SELECT * " +
+                "FROM bicycle " +
+                "WHERE cyclist_id = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
+        while (results.next()){
+            bicycleList.add(mapRowToBicycle(results));
+        }
+        return bicycleList;
     }
 
     @Override
     public Bicycle createBicycle(Bicycle bicycle) {
-        return null;
+        String sql = "INSERT INTO bicycle (name, bicycle_frame_id, cyclist_id) " +
+                "VALUES (?, ?, ?) RETURNING bicycle_id;";
+        Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, bicycle.getBicycleName(),
+                bicycle.getBicycleFrameId(), bicycle.getCyclistId());
+        return getBicycle(newId);
     }
 
     @Override
     public void updateBicycle(Bicycle updatedBicycle) {
+        
 
     }
 
     @Override
     public void deleteBicycle(int bicycleId) {
 
+    }
+
+    private Bicycle mapRowToBicycle (SqlRowSet rowSet){
+        Bicycle bicycle = new Bicycle();
+        bicycle.setBicycleFrameId(rowSet.getInt("bicycle_frame_id"));
+        bicycle.setBicycleId(rowSet.getInt("bicycle_id"));
+        bicycle.setBicycleName(rowSet.getString("name"));
+        return bicycle;
     }
 }

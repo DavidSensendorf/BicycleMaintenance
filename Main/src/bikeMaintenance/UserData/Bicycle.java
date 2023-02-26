@@ -10,7 +10,8 @@ import java.util.Map;
 
 public class Bicycle {
     private int bicycleId;
-    private Frame bicycleFrame;
+    private int cyclistId;
+    private int bicycleFrameId;
     private String bicycleName;
     private Map<String, BrakePad> brakePadMap;
     private Map<String, Cables> cablesMap;
@@ -24,8 +25,7 @@ public class Bicycle {
     private Map<String,Wheel> wheelMap;
     private List<ServiceRecord> serviceRecordList;
 
-    public Bicycle(Frame bicycleFrame) {
-        this.bicycleFrame = bicycleFrame;
+    public Bicycle() {
         this.brakePadMap = new HashMap<>();
         this.cablesMap = new HashMap<>();
         this.cassetteMap = new HashMap<>();
@@ -37,6 +37,14 @@ public class Bicycle {
         this.tireMap = new HashMap<>();
         this.wheelMap = new HashMap<>();
         this.serviceRecordList = new ArrayList<>();
+    }
+
+    public int getCyclistId() {
+        return cyclistId;
+    }
+
+    public void setCyclistId(int cyclistId) {
+        this.cyclistId = cyclistId;
     }
 
     public String getBicycleName() {
@@ -63,12 +71,12 @@ public class Bicycle {
         this.serviceRecordList = serviceRecordList;
     }
 
-    public Frame getBicycleFrame() {
-        return bicycleFrame;
+    public int getBicycleFrameId() {
+        return bicycleFrameId;
     }
 
-    public void setBicycleFrame(Frame bicycleFrame) {
-        this.bicycleFrame = bicycleFrame;
+    public void setBicycleFrameId(int bicycleFrameId) {
+        this.bicycleFrameId = bicycleFrameId;
     }
 
     public Map<String, BrakePad> getBrakePadMap() {
