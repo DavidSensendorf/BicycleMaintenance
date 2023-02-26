@@ -1,5 +1,7 @@
 package bikemaintenance.userdata;
 
+import bikemaintenance.bikeclasses.Bicycle;
+
 import java.util.List;
 
 public class Cyclist {

@@ -1,6 +1,6 @@
 package bikemaintenance.dao.bikeclasses;
 
-import bikemaintenance.userdata.Bicycle;
+import bikemaintenance.bikeclasses.Bicycle;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
@@ -53,7 +53,7 @@ public class JdbcBicycleDao implements BicycleDao {
 
     @Override
     public void updateBicycle(Bicycle updatedBicycle) {
-        
+
 
     }
 
