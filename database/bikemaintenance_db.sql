@@ -17,6 +17,7 @@ CREATE TABLE bicycle (
     bicycle_frame int REFERENCES frame(frame_id),
     cyclist_id int REFERENCES cyclist(cyclist_id),
     name varchar(100) NOT NULL,
+    description varchar(1000),
     CONSTRAINT PK_bicycle PRIMARY KEY (bicycle_id),
     CONSTRAINT FK_cyclist_bicycle FOREIGN KEY (cyclist_id) REFERENCES cyclist(cyclist_id)
 );

@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface BikePartDao {
     BikePart getBikePart(int partId);
-    List<BikePart> getAllUserBikeParts(int userId);
+    List<BikePart> getAllBicycleBikeParts(int bicycleId);
     BikePart createBikePart(BikePart bikePart);
     void updateBikePart(BikePart updatedBikePart);
     void deleteBikePart(int partId);

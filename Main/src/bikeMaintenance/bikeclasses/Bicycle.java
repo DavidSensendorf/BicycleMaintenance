@@ -11,8 +11,8 @@ import java.util.Map;
 public class Bicycle {
     private int bicycleId;
     private int cyclistId;
-    private int bicycleFrameId;
     private String bicycleName;
+    private String description;
     private List<ServiceRecord> serviceRecordList;
     private List<BikePart> listOfBikeParts;
 
@@ -32,12 +32,12 @@ public class Bicycle {
         this.cyclistId = cyclistId;
     }
 
-    public int getBicycleFrameId() {
-        return bicycleFrameId;
+    public String getDescription() {
+        return description;
     }
 
-    public void setBicycleFrameId(int bicycleFrameId) {
-        this.bicycleFrameId = bicycleFrameId;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getBicycleName() {

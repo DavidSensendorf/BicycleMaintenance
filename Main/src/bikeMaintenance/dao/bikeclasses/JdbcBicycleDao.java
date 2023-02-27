@@ -44,29 +44,35 @@ public class JdbcBicycleDao implements BicycleDao {
 
     @Override
     public Bicycle createBicycle(Bicycle bicycle) {
-        String sql = "INSERT INTO bicycle (name, bicycle_frame_id, cyclist_id) " +
-                "VALUES (?, ?, ?) RETURNING bicycle_id;";
+        String sql = "INSERT INTO bicycle (name, cyclist_id, description) " +
+                "VALUES (?, ?) RETURNING bicycle_id;";
         Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, bicycle.getBicycleName(),
-                bicycle.getBicycleFrameId(), bicycle.getCyclistId());
+                bicycle.getCyclistId(), bicycle.getDescription());
         return getBicycle(newId);
     }
 
     @Override
     public void updateBicycle(Bicycle updatedBicycle) {
+        String sql = "UPDATE bicycle " +
+                "SET name = ?, description = ? " +
+                "WHERE bicycle_id = ?";
+        jdbcTemplate.update(sql, updatedBicycle.getBicycleName(), updatedBicycle.getDescription(), updatedBicycle.getBicycleId());
 
 
     }
 
     @Override
     public void deleteBicycle(int bicycleId) {
-
+        String sql = "DELETE FROM bicycle WHERE bicycle_id = ?";
+        jdbcTemplate.update(sql, bicycleId);
     }
 
     private Bicycle mapRowToBicycle (SqlRowSet rowSet){
         Bicycle bicycle = new Bicycle();
-        bicycle.setBicycleFrameId(rowSet.getInt("bicycle_frame_id"));
         bicycle.setBicycleId(rowSet.getInt("bicycle_id"));
+        bicycle.setCyclistId(rowSet.getInt("cyclist_id"));
         bicycle.setBicycleName(rowSet.getString("name"));
+        bicycle.setDescription(rowSet.getString("description"));
         return bicycle;
     }
 }

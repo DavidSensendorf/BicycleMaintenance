@@ -6,11 +6,12 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class BikePart {
-    private int partId;
+    private int bikePartId;
     private int bicycleId;
     private String name;
     private String description;
     private String manufacturer;
+    private String model;
     private int modelYear;
     private String partType;
     private LocalDate installDate;
@@ -34,6 +35,13 @@ public class BikePart {
     private String material;
     private int sealantAgeInDays;
 
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
 
     public String getDescription() {
         return description;
@@ -171,12 +179,12 @@ public class BikePart {
         this.modelYear = modelYear;
     }
 
-    public int getPartId() {
-        return partId;
+    public int getBikePartId() {
+        return bikePartId;
     }
 
-    public void setPartId(int partId) {
-        this.partId = partId;
+    public void setBikePartId(int bikePartId) {
+        this.bikePartId = bikePartId;
     }
 
     public int getBicycleId() {
