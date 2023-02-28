@@ -2,7 +2,7 @@ package bikemaintenance.bikeclasses;
 
 public class DrivetrainComponent extends BikePart{
     private int speeds;
-    private String size;
+    private String gearSize;
     private String lubeType;
     private boolean isWaxed;
 
@@ -14,12 +14,12 @@ public class DrivetrainComponent extends BikePart{
         this.speeds = speeds;
     }
 
-    public String getSize() {
-        return size;
+    public String getGearSize() {
+        return gearSize;
     }
 
-    public void setSize(String size) {
-        this.size = size;
+    public void setGearSize(String gearSize) {
+        this.gearSize = gearSize;
     }
 
     public String getLubeType() {

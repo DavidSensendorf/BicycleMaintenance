@@ -3,7 +3,6 @@ package bikemaintenance.bikeclasses;
 public class WheelTire extends BikePart{
     private boolean isTubeless;
     private boolean isFront;
-    private int sealantAgeInDays;
 
     public boolean isTubeless() {
         return isTubeless;
@@ -21,11 +20,4 @@ public class WheelTire extends BikePart{
         isFront = front;
     }
 
-    public int getSealantAgeInDays() {
-        return sealantAgeInDays;
-    }
-
-    public void setSealantAgeInDays(int sealantAgeInDays) {
-        this.sealantAgeInDays = sealantAgeInDays;
-    }
 }

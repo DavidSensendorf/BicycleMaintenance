@@ -44,20 +44,41 @@ public class JdbcBikePartDao implements BikePartDao{
     }
 
     @Override
+    public List<BikePart> getAllBicycleBikeParts(int bicycleId, String partType) {
+        List<BikePart> bikePartList = new ArrayList<>();
+        String sql = "Select * " +
+                "FROM bike_part " +
+                "WHERE bicycle_id = ? AND part_type = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, bicycleId, partType);
+        while (results.next()){
+            bikePartList.add(mapRowToBikePart(results));
+        }
+        return bikePartList;
+    }
+
+    @Override
     public BikePart createBikePart(BikePart bikePart) {
-        String sql = "INSERT INTO bike_part (bicycle_id, name, description, install_date, distance_in_meters, age_interval, " +
-                "distance_interval, manufacturer, model, model_year, part_type, pad_type, speeds, part_size, lube_type, " +
-                "days_since_lube, meters_since_lube, waxed, tubeless, style, electric, front, material, sealant_age) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING bike_part_id;";
+        String sql = "INSERT INTO bike_part (bicycle_id, name, description, manufacturer, model, model_year, part_type, " +
+                "install_date, distance_in_meters, age_interval, distance_interval, material) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING bike_part_id;";
         Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, bikePart.getBicycleId(), bikePart.getName(),
-                bikePart.getDescription(), bikePart.getInstallDate(), bikePart.getDistanceInMeters(), bikePart.getAgeInterval(),
-                bikePart.getDistanceInterval(), bikePart.getManufacturer(), bikePart.getModel(), bikePart.getModelYear(),
-                bikePart.getPartType(), );
+                bikePart.getDescription(), bikePart.getManufacturer(), bikePart.getModel(), bikePart.getModelYear(),
+                bikePart.getPartType(), bikePart.getInstallDate(), bikePart.getDistanceInMeters(),
+                bikePart.getAgeInterval(), bikePart.getDistanceInterval(), bikePart.getMaterial());
+        return getBikePart(newId);
     }
 
     @Override
     public void updateBikePart(BikePart updatedBikePart) {
-
+        String sql = "UPDATE bike_part " +
+                "SET bicycle_id = ?, name = ?, description = ?, manufacturer = ?, model = ?, model_year = ?, part_type = ?, " +
+                "install_date = ?, distance_in_meters = ?, age_interval = ?, distance_interval = ?, material = ? " +
+                "WHERE bike_part_id = ?";
+        jdbcTemplate.update(sql, updatedBikePart.getBicycleId(), updatedBikePart.getName(),
+                updatedBikePart.getDescription(), updatedBikePart.getManufacturer(), updatedBikePart.getModel(),
+                updatedBikePart.getModelYear(), updatedBikePart.getPartType(), updatedBikePart.getInstallDate(),
+                updatedBikePart.getDistanceInMeters(), updatedBikePart.getAgeInterval(), updatedBikePart.getDistanceInterval(),
+                updatedBikePart.getMaterial(), updatedBikePart.getBikePartId());
     }
 
     @Override
@@ -79,17 +100,6 @@ public class JdbcBikePartDao implements BikePartDao{
         bikePart.setModel(rowSet.getString("model"));
         bikePart.setModelYear(rowSet.getInt("model_year"));
         bikePart.setPartType(rowSet.getString("part_type"));
-        bikePart.setPadType(rowSet.getString("pad_type"));
-        bikePart.setSpeeds(rowSet.getInt("speeds"));
-        bikePart.setSize(rowSet.getString("part_size"));
-        bikePart.setLubeType(rowSet.getString("lube_type"));
-        bikePart.setDaysSinceLube(rowSet.getInt("days_since_lube"));
-        bikePart.setMetersSinceLube(rowSet.getInt("meters_since_lube"));
-        bikePart.setWaxed(rowSet.getBoolean("waxed"));
-        bikePart.setTubeless(rowSet.getBoolean("tubeless"));
-        bikePart.setStyle(rowSet.getString("style"));
-        bikePart.setElectric(rowSet.getBoolean("electric"));
-        bikePart.setFront(rowSet.getBoolean("front"));
         bikePart.setMaterial(rowSet.getString("material"));
 
         return bikePart;
