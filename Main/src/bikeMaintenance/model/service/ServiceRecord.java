@@ -1,4 +1,4 @@
-package bikemaintenance.service;
+package bikemaintenance.model.service;
 
 public class ServiceRecord {
 

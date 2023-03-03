@@ -1,4 +1,4 @@
-package bikemaintenance.bikeclasses;
+package bikemaintenance.model.bikeclasses;
 
 public class WheelTire extends BikePart{
     private boolean isTubeless;

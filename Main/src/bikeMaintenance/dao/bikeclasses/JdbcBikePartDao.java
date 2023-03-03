@@ -1,10 +1,11 @@
 package bikemaintenance.dao.bikeclasses;
 
-import bikemaintenance.bikeclasses.BikePart;
+import bikemaintenance.model.bikeclasses.BikePart;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 import javax.sql.DataSource;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -83,6 +84,10 @@ public class JdbcBikePartDao implements BikePartDao{
 
     @Override
     public void deleteBikePart(int partId) {
+        String sql = "UPDATE bike_part" +
+                "SET active = false, date_deleted = ?" +
+                "WHERE bike_part_id = ?;";
+        jdbcTemplate.update(sql, LocalDateTime.now(), partId);
 
     }
 

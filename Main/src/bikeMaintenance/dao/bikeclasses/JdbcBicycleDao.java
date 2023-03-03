@@ -1,10 +1,12 @@
 package bikemaintenance.dao.bikeclasses;
 
-import bikemaintenance.bikeclasses.Bicycle;
+import bikemaintenance.model.bikeclasses.Bicycle;
+import org.junit.jupiter.api.TestClassOrder;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 import javax.sql.DataSource;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class JdbcBicycleDao implements BicycleDao {
         Bicycle bicycle = null;
         String sql = "Select * " +
                      "FROM bicycle" +
-                     "WHERE bicycleId = ?;";
+                     "WHERE bicycleId = ? AND active = true;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, bicycleId);
         if (results.next()) {
             bicycle = mapRowToBicycle(results);
@@ -34,7 +36,7 @@ public class JdbcBicycleDao implements BicycleDao {
         List<Bicycle> bicycleList = new ArrayList<>();
         String sql = "SELECT * " +
                 "FROM bicycle " +
-                "WHERE cyclist_id = ?;";
+                "WHERE cyclist_id = ? AND active = true;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
         while (results.next()){
             bicycleList.add(mapRowToBicycle(results));
@@ -44,8 +46,8 @@ public class JdbcBicycleDao implements BicycleDao {
 
     @Override
     public Bicycle createBicycle(Bicycle bicycle) {
-        String sql = "INSERT INTO bicycle (name, cyclist_id, description) " +
-                "VALUES (?, ?) RETURNING bicycle_id;";
+        String sql = "INSERT INTO bicycle (name, cyclist_id, description, active) " +
+                "VALUES (?, ? ?, true) RETURNING bicycle_id;";
         Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, bicycle.getBicycleName(),
                 bicycle.getCyclistId(), bicycle.getDescription());
         return getBicycle(newId);
@@ -55,16 +57,19 @@ public class JdbcBicycleDao implements BicycleDao {
     public void updateBicycle(Bicycle updatedBicycle) {
         String sql = "UPDATE bicycle " +
                 "SET name = ?, description = ? " +
-                "WHERE bicycle_id = ?";
+                "WHERE bicycle_id = ? AND active = true;";
         jdbcTemplate.update(sql, updatedBicycle.getBicycleName(), updatedBicycle.getDescription(), updatedBicycle.getBicycleId());
 
 
     }
 
     @Override
+    /* TODO:  Some kind of logic to deal with orphan bike parts later on?*/
     public void deleteBicycle(int bicycleId) {
-        String sql = "DELETE FROM bicycle WHERE bicycle_id = ?";
-        jdbcTemplate.update(sql, bicycleId);
+        String sql = "UPDATE bicycle" +
+                "SET active = false, date_deleted = ?" +
+                "WHERE bicycle_id = ?;";
+        jdbcTemplate.update(sql, LocalDateTime.now(), bicycleId);
     }
 
     private Bicycle mapRowToBicycle (SqlRowSet rowSet){

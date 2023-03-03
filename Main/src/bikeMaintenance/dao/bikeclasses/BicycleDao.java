@@ -1,6 +1,6 @@
 package bikemaintenance.dao.bikeclasses;
 
-import bikemaintenance.bikeclasses.Bicycle;
+import bikemaintenance.model.bikeclasses.Bicycle;
 
 import java.util.List;
 

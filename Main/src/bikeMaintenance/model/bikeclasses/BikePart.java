@@ -1,6 +1,6 @@
-package bikemaintenance.bikeclasses;
+package bikemaintenance.model.bikeclasses;
 
-import bikemaintenance.service.ServiceRecord;
+import bikemaintenance.model.service.ServiceRecord;
 
 import java.time.LocalDate;
 import java.util.List;

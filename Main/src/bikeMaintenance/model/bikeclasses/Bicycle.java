@@ -1,12 +1,8 @@
-package bikemaintenance.bikeclasses;
+package bikemaintenance.model.bikeclasses;
 
-import bikemaintenance.bikeclasses.*;
-import bikemaintenance.service.ServiceRecord;
+import bikemaintenance.model.service.ServiceRecord;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Bicycle {
     private int bicycleId;

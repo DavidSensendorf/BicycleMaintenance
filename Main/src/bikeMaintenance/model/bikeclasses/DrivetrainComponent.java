@@ -1,4 +1,4 @@
-package bikemaintenance.bikeclasses;
+package bikemaintenance.model.bikeclasses;
 
 public class DrivetrainComponent extends BikePart{
     private int speeds;

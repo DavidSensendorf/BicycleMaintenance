@@ -1,6 +1,6 @@
 package bikemaintenance.dao.bikeclasses;
 
-import bikemaintenance.bikeclasses.WheelTire;
+import bikemaintenance.model.bikeclasses.WheelTire;
 
 import java.util.List;
 

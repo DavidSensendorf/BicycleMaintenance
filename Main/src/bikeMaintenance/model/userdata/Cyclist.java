@@ -1,6 +1,6 @@
-package bikemaintenance.userdata;
+package bikemaintenance.model.userdata;
 
-import bikemaintenance.bikeclasses.Bicycle;
+import bikemaintenance.model.bikeclasses.Bicycle;
 
 import java.util.List;
 
