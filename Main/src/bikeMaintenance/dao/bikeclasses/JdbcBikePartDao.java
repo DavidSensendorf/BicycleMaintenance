@@ -60,12 +60,12 @@ public class JdbcBikePartDao implements BikePartDao{
     @Override
     public BikePart createBikePart(BikePart bikePart) {
         String sql = "INSERT INTO bike_part (bicycle_id, name, description, manufacturer, model, model_year, part_type, " +
-                "install_date, distance_in_meters, age_interval, distance_interval, material) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING bike_part_id;";
+                "install_date, distance_in_meters, age_interval, distance_interval, material, style) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING bike_part_id;";
         Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, bikePart.getBicycleId(), bikePart.getName(),
                 bikePart.getDescription(), bikePart.getManufacturer(), bikePart.getModel(), bikePart.getModelYear(),
                 bikePart.getPartType(), bikePart.getInstallDate(), bikePart.getDistanceInMeters(),
-                bikePart.getAgeInterval(), bikePart.getDistanceInterval(), bikePart.getMaterial());
+                bikePart.getAgeInterval(), bikePart.getDistanceInterval(), bikePart.getMaterial(), bikePart.getStyle());
         return getBikePart(newId);
     }
 
@@ -73,13 +73,13 @@ public class JdbcBikePartDao implements BikePartDao{
     public void updateBikePart(BikePart updatedBikePart) {
         String sql = "UPDATE bike_part " +
                 "SET bicycle_id = ?, name = ?, description = ?, manufacturer = ?, model = ?, model_year = ?, part_type = ?, " +
-                "install_date = ?, distance_in_meters = ?, age_interval = ?, distance_interval = ?, material = ? " +
+                "install_date = ?, distance_in_meters = ?, age_interval = ?, distance_interval = ?, material = ?, style = ? " +
                 "WHERE bike_part_id = ?";
         jdbcTemplate.update(sql, updatedBikePart.getBicycleId(), updatedBikePart.getName(),
                 updatedBikePart.getDescription(), updatedBikePart.getManufacturer(), updatedBikePart.getModel(),
                 updatedBikePart.getModelYear(), updatedBikePart.getPartType(), updatedBikePart.getInstallDate(),
                 updatedBikePart.getDistanceInMeters(), updatedBikePart.getAgeInterval(), updatedBikePart.getDistanceInterval(),
-                updatedBikePart.getMaterial(), updatedBikePart.getBikePartId());
+                updatedBikePart.getMaterial(), updatedBikePart.getStyle(), updatedBikePart.getBikePartId());
     }
 
     @Override
@@ -106,6 +106,7 @@ public class JdbcBikePartDao implements BikePartDao{
         bikePart.setModelYear(rowSet.getInt("model_year"));
         bikePart.setPartType(rowSet.getString("part_type"));
         bikePart.setMaterial(rowSet.getString("material"));
+        bikePart.setStyle(rowSet.getString("style"));
 
         return bikePart;
     }

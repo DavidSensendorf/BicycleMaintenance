@@ -1,6 +1,7 @@
 package bikemaintenance.dao.bikeclasses;
 
 import bikemaintenance.model.bikeclasses.Brake;
+import bikemaintenance.model.bikeclasses.BikePart;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
@@ -13,6 +14,7 @@ public class JdbcBrakeDao implements BrakeDao {
     private JdbcBikePartDao bikePartDao;
     public JdbcBrakeDao(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
+        this.bikePartDao = new JdbcBikePartDao(dataSource);
     }
 
 
@@ -21,7 +23,8 @@ public class JdbcBrakeDao implements BrakeDao {
         Brake brake = null;
         String sql = "SELECT * " +
                 "FROM brake " +
-                "WHERE brake_id = ?";
+                "JOIN bike_part ON brake.bike_part_id = bike_part.bike_part_id " +
+                "WHERE brake.bike_part_id = ?";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, brakeId);
         if (results.next()) {
             brake = mapRowToBrake(results);
@@ -41,7 +44,12 @@ public class JdbcBrakeDao implements BrakeDao {
 
     @Override
     public Brake createBrake(Brake brake) {
-        return null;
+        BikePart newBikePart = bikePartDao.createBikePart(brake);
+        brake.setBikePartId(newBikePart.getBikePartId());
+        String sql = "INSERT INTO brake (bike_part_id, pad_type, front) " +
+                "VALUES (?, ?, ?)";
+        jdbcTemplate.update(sql, brake.getBikePartId(), brake.getPadType(), brake.isFront());
+        return brake;
     }
 
     @Override
@@ -55,11 +63,10 @@ public class JdbcBrakeDao implements BrakeDao {
     }
 
     private Brake mapRowToBrake(SqlRowSet rowSet) {
-        Brake brake = (Brake) bikePartDao.getBikePart(rowSet.getInt("bike_part_id"));
-
-
-
-
+        BikePart brake = new Brake();
+        brake = bikePartDao.getBikePart(rowSet.getInt("bike_part_id"));
+        brake.setPadType(rowSet.getString("pad_type"));
+        brake.setFront(rowSet.getBoolean("front"));
         return brake;
     }
 }
