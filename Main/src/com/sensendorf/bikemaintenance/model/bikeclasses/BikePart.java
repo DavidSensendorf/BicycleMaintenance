@@ -8,7 +8,7 @@ import java.util.List;
 public class BikePart {
     public BikePart(int bikePartId, int bicycleId, String name, String description, String manufacturer, String model,
                     int modelYear, String partType, LocalDate installDate, int distanceInMeters, int ageInterval,
-                    int distanceInterval, List<ServiceRecord> serviceRecordList, String material, String style) {
+                    int distanceInterval, String material, String style) {
         this.bikePartId = bikePartId;
         this.bicycleId = bicycleId;
         this.name = name;
@@ -21,7 +21,6 @@ public class BikePart {
         this.distanceInMeters = distanceInMeters;
         this.ageInterval = ageInterval;
         this.distanceInterval = distanceInterval;
-        this.serviceRecordList = serviceRecordList;
         this.material = material;
         this.style = style;
     }

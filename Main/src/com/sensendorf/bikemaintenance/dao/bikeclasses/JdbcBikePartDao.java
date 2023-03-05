@@ -23,7 +23,7 @@ public class JdbcBikePartDao implements BikePartDao{
         BikePart bikePart = null;
         String sql = "Select * " +
                 "FROM bike_part " +
-                "WHERE bike_part_id = ?;";
+                "WHERE bike_part_id = ? AND active = true;";
         try {
             bikePart = jdbcTemplate.queryForObject(sql, new BikePartMapper(), partId);
         } catch (Exception e) {
@@ -38,7 +38,7 @@ public class JdbcBikePartDao implements BikePartDao{
         List<BikePart> bikePartList = new ArrayList<>();
         String sql = "Select * " +
                 "FROM bike_part " +
-                "WHERE bicycle_id = ?;";
+                "WHERE bicycle_id = ? AND active = true;";
         try {
             bikePartList = jdbcTemplate.query(sql, new BikePartMapper(), bicycleId);
         } catch (Exception e) {
@@ -53,7 +53,7 @@ public class JdbcBikePartDao implements BikePartDao{
         List<BikePart> bikePartList = new ArrayList<>();
         String sql = "Select * " +
                 "FROM bike_part " +
-                "WHERE bicycle_id = ? AND part_type = ?;";
+                "WHERE bicycle_id = ? AND part_type = ? AND active = true;";
         try {
             bikePartList = jdbcTemplate.query(sql, new BikePartMapper(), bicycleId, partType);
         } catch (Exception e) {
@@ -90,8 +90,8 @@ public class JdbcBikePartDao implements BikePartDao{
 
     @Override
     public void deleteBikePart(int partId) {
-        String sql = "UPDATE bike_part" +
-                "SET active = false, date_deleted = ?" +
+        String sql = "UPDATE bike_part " +
+                "SET active = false, date_deleted = ? " +
                 "WHERE bike_part_id = ?;";
         jdbcTemplate.update(sql, LocalDateTime.now(), partId);
 

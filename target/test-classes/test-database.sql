@@ -96,6 +96,19 @@ VALUES
 ('4', 'Bike1', 'Description1'),
 ('4', 'Bike2', 'Description2');
 
+INSERT INTO bike_part (bicycle_id, name, description, manufacturer, model, model_year, part_type, install_date, distance_in_meters,
+ age_interval, distance_interval, material, style)
+ VALUES
+ (1, 'part1', 'description1', 'manufacturer1', 'model1', 1971, 'Frame1', '2020-1-1', 2001, 141, 4001, 'carbon1', 'road1'),
+ (1, 'part2', 'description2', 'manufacturer2', 'model2', 1972, 'Frame2', '2021-1-1', 2002, 142, 4002, 'carbon2', 'road2'),
+ (1, 'part3', 'description3', 'manufacturer3', 'model3', 1973, 'Frame2', '2022-1-1', 2003, 143, 4003, 'carbon3', 'road3'),
+ (2, 'part4', 'description4', 'manufacturer4', 'model4', 1974, 'Frame4', '2023-1-1', 2004, 144, 4004, 'carbon4', 'road4'),
+ (2, 'part5', 'description5', 'manufacturer5', 'model5', 1975, 'Frame5', '2024-1-1', 2005, 145, 4005, 'carbon5', 'road5'),
+ (3, 'part6', 'description6', 'manufacturer6', 'model6', 1976, 'Frame6', '2025-1-1', 2006, 146, 4006, 'carbon6', 'road6'),
+ (4, 'part7', 'description7', 'manufacturer7', 'model7', 1977, 'Frame7', '2026-1-1', 2007, 147, 4007, 'carbon7', 'road7'),
+ (5, 'part8', 'description8', 'manufacturer8', 'model8', 1978, 'Frame8', '2027-1-1', 2008, 148, 4008, 'carbon8', 'road8');
+ 
+
 
 COMMIT;
 

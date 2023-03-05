@@ -14,7 +14,7 @@ public class Brake extends BikePart{
                  int distanceInterval, List<ServiceRecord> serviceRecordList, String material, String style, String padType,
                  boolean isFront) {
         super(bikePartId, bicycleId, name, description, manufacturer, model, modelYear, partType, installDate,
-                distanceInMeters, ageInterval, distanceInterval, serviceRecordList, material, style);
+                distanceInMeters, ageInterval, distanceInterval, material, style);
         this.padType = padType;
         this.isFront = isFront;
     }

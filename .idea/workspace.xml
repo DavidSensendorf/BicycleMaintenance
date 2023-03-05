@@ -62,7 +62,7 @@
       <recent name="Main" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JdbcBicycleDaoTests">
+  <component name="RunManager" selected="JUnit.JdbcBikePartDaoTests">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="bikemaintenance.Main" />
       <module name="BicycleMaintenance" />
@@ -98,6 +98,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="JdbcBikePartDaoTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BicycleMaintenance" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="JdbcBikePartDaoTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UtilitiesTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BicycleMaintenance" />
       <option name="PACKAGE_NAME" value="" />
@@ -109,6 +118,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JdbcBikePartDaoTests" />
         <item itemvalue="JUnit.JdbcBicycleDaoTests" />
         <item itemvalue="Application.com.sensendorf.bikemaintenance.Main" />
         <item itemvalue="Application.Main" />
