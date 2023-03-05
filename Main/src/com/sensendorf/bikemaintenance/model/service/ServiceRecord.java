@@ -1,19 +1,35 @@
 package com.sensendorf.bikemaintenance.model.service;
 
+import java.time.LocalDate;
+
 public class ServiceRecord {
 
 
-    private int serviceAgeInDays;
+    private int servicePartId;
+    private LocalDate serviceDate;
     private int serviceDistanceInMeters;
     private String serviceNotes;
-    private String servicePart;
+    private String serviceType;
 
-    public int getServiceAgeInDays() {
-        return serviceAgeInDays;
+
+    public ServiceRecord() {
     }
 
-    public void setServiceAgeInDays(int serviceAgeInDays) {
-        this.serviceAgeInDays = serviceAgeInDays;
+    public ServiceRecord(LocalDate serviceDate, int serviceDistanceInMeters, String serviceNotes, String serviceType, int servicePartId) {
+        this.serviceDate = serviceDate;
+        this.serviceDistanceInMeters = serviceDistanceInMeters;
+        this.serviceNotes = serviceNotes;
+        this.serviceType = serviceType;
+        this.servicePartId = servicePartId;
+    }
+
+
+    public LocalDate getServiceDate() {
+        return serviceDate;
+    }
+
+    public void setServiceDate(LocalDate serviceDate) {
+        this.serviceDate = serviceDate;
     }
 
     public int getServiceDistanceInMeters() {
@@ -32,11 +48,19 @@ public class ServiceRecord {
         this.serviceNotes = serviceNotes;
     }
 
-    public String getServicePart() {
-        return servicePart;
+    public int getServicePartId() {
+        return servicePartId;
     }
 
-    public void setServicePart(String servicePart) {
-        this.servicePart = servicePart;
+    public void setServicePartId(int servicePartId) {
+        this.servicePartId = servicePartId;
+    }
+
+    public String getServiceType() {
+        return serviceType;
+    }
+
+    public void setServiceType(String serviceType) {
+        this.serviceType = serviceType;
     }
 }

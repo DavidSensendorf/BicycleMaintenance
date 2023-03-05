@@ -76,6 +76,14 @@ CREATE TABLE bike_part (
     CONSTRAINT FK_bike_part FOREIGN KEY (bike_part_id) REFERENCES bike_part(bike_part_id)
     );
 
+    CREATE TABLE service_record(
+        service_part_id int REFERENCES bike_part(bike_part_id),
+        service_notes varchar(1000),
+        service_type varchar(100),
+        service_distance_in_meters int,
+        CONSTRAINT FK_part_id FOREIGN KEY (service_part_id) REFERENCES bike_part(bike_part_id)
+        );
+
 
 INSERT INTO cyclist (name)
 VALUES
