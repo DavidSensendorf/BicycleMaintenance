@@ -42,24 +42,27 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "11",
-    "last_directory_selection": "C:/Users/Student/workspace/personal/BicycleMaintenance/Main/src",
-    "last_opened_file_path": "C:/Users/Student/workspace/david-sensendorf-student-code/java/module2/07_Data_Access_and_DAO/lecture-final",
-    "project.structure.last.edited": "Project",
+    "last_directory_selection": "C:/Users/Student/workspace/personal/BicycleMaintenance/Test/java",
+    "last_opened_file_path": "C:/Users/Student/workspace/david-sensendorf-student-code/java/module2/14_Server_Side_APIs_Part_2",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "http.proxy"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Student\workspace\personal\BicycleMaintenance\database" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Student\workspace\personal\BicycleMaintenance\Test\resources" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="bikemaintenance.dao.bikeClasses" />
       <recent name="Main" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.JdbcBicycleDaoTests">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="bikemaintenance.Main" />
       <module name="BicycleMaintenance" />
@@ -69,6 +72,28 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.sensendorf.bikemaintenance.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sensendorf.bikemaintenance.Main" />
+      <module name="BicycleMaintenance" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sensendorf.bikemaintenance.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JdbcBicycleDaoTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BicycleMaintenance" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="JdbcBicycleDaoTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -84,6 +109,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JdbcBicycleDaoTests" />
+        <item itemvalue="Application.com.sensendorf.bikemaintenance.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.UtilitiesTests" />
       </list>

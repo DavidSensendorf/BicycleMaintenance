@@ -76,4 +76,26 @@ CREATE TABLE bike_part (
     CONSTRAINT FK_bike_part FOREIGN KEY (bike_part_id) REFERENCES bike_part(bike_part_id)
     );
 
-    COMMIT;
+
+INSERT INTO cyclist (name)
+VALUES
+('Person1'),
+('Person2'),
+('Person3'),
+('Person4');
+
+INSERT INTO bicycle (cyclist_id, name, description)
+VALUES
+('1', 'Bike1', 'Description1'),
+('1', 'Bike2', 'Description2'),
+('1', 'Bike3', 'Description3'),
+('2', 'Bike1', 'Description1'),
+('3', 'Bike1', 'Description1'),
+('3', 'Bike2', 'Description2'),
+('3', 'Bike3', 'Description3'),
+('4', 'Bike1', 'Description1'),
+('4', 'Bike2', 'Description2');
+
+
+COMMIT;
+

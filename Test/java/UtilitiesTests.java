@@ -1,4 +1,4 @@
-import bikemaintenance.Utilities;
+import com.sensendorf.bikemaintenance.Utilities;
 import org.junit.Assert;
 import org.junit.Test;
 
