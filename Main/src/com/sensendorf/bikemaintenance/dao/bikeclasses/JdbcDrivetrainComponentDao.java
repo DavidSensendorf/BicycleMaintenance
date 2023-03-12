@@ -28,12 +28,12 @@ public class JdbcDrivetrainComponentDao implements DrivetrainComponentDao{
     }
 
     @Override
-    public void updateDrivetrainComponent(DrivetrainComponent updatedDrivetrainComponent) {
-
+    public boolean updateDrivetrainComponent(DrivetrainComponent updatedDrivetrainComponent) {
+        return true;
     }
 
     @Override
-    public void deleteDrivetrainComponent(int drivetrainComponentId) {
-
+    public boolean deleteDrivetrainComponent(int drivetrainComponentId) {
+        return true;
     }
 }

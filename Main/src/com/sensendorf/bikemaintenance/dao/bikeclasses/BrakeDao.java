@@ -9,7 +9,7 @@ public interface BrakeDao {
     List<Brake> getAllBicycleBrakes(int bicycleId);
     public List<Brake> getAllBicycleBrakes(int bicycleId, String partType);
     Brake createBrake(Brake brake);
-    void updateBrake(Brake updatedBrake);
-    void deleteBrake(int brakeId);
+    boolean updateBrake(Brake updatedBrake);
+    boolean deleteBrake(int brakeId);
 
 }

@@ -9,6 +9,6 @@ public interface WheelTireDao {
     List<WheelTire> getAllBicycleWheelTires(int wheelTireId);
     List<WheelTire> getAllBicycleWheelTires(int wheelTireId, String partType);
     WheelTire createWheelTire(WheelTire wheelTire);
-    void updateWheelTire(WheelTire updatedWheelTire);
-    void deleteWheelTire(int wheelTireId);
+    boolean updateWheelTire(WheelTire updatedWheelTire);
+    boolean deleteWheelTire(int wheelTireId);
 }

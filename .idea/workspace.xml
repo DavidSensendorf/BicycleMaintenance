@@ -61,7 +61,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "jdk.selected.JAVA_MODULE": "11",
     "last_directory_selection": "C:/Users/Student/workspace/personal/BicycleMaintenance/Test/java",
-    "last_opened_file_path": "C:/Users/Student/workspace/david-sensendorf-student-code/java/module2/14_Server_Side_APIs_Part_2",
+    "last_opened_file_path": "C:/Users/Student/workspace/david-sensendorf-student-code/java/module2/14_Server_Side_APIs_Part_2/lecture/server",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -70,6 +70,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Student\workspace\personal\BicycleMaintenance\Main\src\com\sensendorf\bikemaintenance\dao\userdata" />
       <recent name="C:\Users\Student\workspace\personal\BicycleMaintenance\database" />
     </key>
     <key name="MoveFile.RECENT_KEYS">

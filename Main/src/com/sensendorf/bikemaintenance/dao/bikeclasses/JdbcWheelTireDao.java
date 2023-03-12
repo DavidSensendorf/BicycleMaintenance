@@ -28,12 +28,12 @@ public class JdbcWheelTireDao implements WheelTireDao{
     }
 
     @Override
-    public void updateWheelTire(WheelTire updatedWheelTire) {
-
+    public boolean updateWheelTire(WheelTire updatedWheelTire) {
+        return true;
     }
 
     @Override
-    public void deleteWheelTire(int wheelTireId) {
-
+    public boolean deleteWheelTire(int wheelTireId) {
+        return true;
     }
 }

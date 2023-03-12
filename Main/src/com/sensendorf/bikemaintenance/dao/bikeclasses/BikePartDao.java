@@ -9,6 +9,6 @@ public interface BikePartDao {
     List<BikePart> getAllBicycleBikeParts(int bicycleId);
     List<BikePart> getAllBicycleBikeParts(int bicycleId, String partType);
     BikePart createBikePart(BikePart bikePart);
-    void updateBikePart(BikePart updatedBikePart);
-    void deleteBikePart(int partId);
+    boolean updateBikePart(BikePart updatedBikePart);
+    boolean deleteBikePart(int partId);
 }

@@ -9,6 +9,6 @@ public interface DrivetrainComponentDao {
     List<DrivetrainComponent> getAllBicycleDrivetrainComponents(int bicycleId);
     List<DrivetrainComponent> getAllBicycleDrivetrainComponents(int bicycleId, String partType);
     DrivetrainComponent createDrivetrainComponent(DrivetrainComponent drivetrainComponent);
-    void updateDrivetrainComponent(DrivetrainComponent updatedDrivetrainComponent);
-    void deleteDrivetrainComponent(int drivetrainComponentId);
+    boolean updateDrivetrainComponent(DrivetrainComponent updatedDrivetrainComponent);
+    boolean deleteDrivetrainComponent(int drivetrainComponentId);
 }

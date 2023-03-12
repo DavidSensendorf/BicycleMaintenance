@@ -1,9 +1,7 @@
 package com.sensendorf.bikemaintenance.dao.bikeclasses;
 
 import com.sensendorf.bikemaintenance.model.bikeclasses.Bicycle;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
@@ -60,22 +58,30 @@ public class JdbcBicycleDao implements BicycleDao {
     }
 
     @Override
-    public void updateBicycle(Bicycle updatedBicycle) {
+    public boolean updateBicycle(Bicycle updatedBicycle) {
         String sql = "UPDATE bicycle " +
                 "SET name = ?, description = ? " +
                 "WHERE bicycle_id = ? AND active = true;";
-        jdbcTemplate.update(sql, updatedBicycle.getBicycleName(), updatedBicycle.getDescription(), updatedBicycle.getBicycleId());
-
-
+        try {
+            jdbcTemplate.update(sql, updatedBicycle.getBicycleName(), updatedBicycle.getDescription(), updatedBicycle.getBicycleId());
+        } catch (Exception e){
+            return false;
+        }
+        return true;
     }
 
     @Override
     /* TODO:  Some kind of logic to deal with orphan bike parts later on?*/
-    public void deleteBicycle(int bicycleId) {
+    public boolean deleteBicycle(int bicycleId) {
         String sql = "UPDATE bicycle " +
                 "SET active = false, date_deleted = ? " +
                 "WHERE bicycle_id = ?;";
-        jdbcTemplate.update(sql, LocalDateTime.now(), bicycleId);
+        try{
+            jdbcTemplate.update(sql, LocalDateTime.now(), bicycleId);
+        }catch (Exception e) {
+            return false;
+        }
+        return true;
     }
 
 }

@@ -9,6 +9,6 @@ public interface BicycleDao {
     Bicycle getBicycle(int bicycleId);
     List<Bicycle> getAllUserBicycles(int userId);
     Bicycle createBicycle(Bicycle bicycle);
-    void updateBicycle(Bicycle updatedBicycle);
-    void deleteBicycle(int bicycleId);
+    boolean updateBicycle(Bicycle updatedBicycle);
+    boolean deleteBicycle(int bicycleId);
 }

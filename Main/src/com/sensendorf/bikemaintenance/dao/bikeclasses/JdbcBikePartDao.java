@@ -76,24 +76,33 @@ public class JdbcBikePartDao implements BikePartDao{
     }
 
     @Override
-    public void updateBikePart(BikePart updatedBikePart) {
+    public boolean updateBikePart(BikePart updatedBikePart) {
         String sql = "UPDATE bike_part " +
                 "SET bicycle_id = ?, name = ?, description = ?, manufacturer = ?, model = ?, model_year = ?, part_type = ?, " +
                 "install_date = ?, distance_in_meters = ?, age_interval = ?, distance_interval = ?, material = ?, style = ? " +
                 "WHERE bike_part_id = ?";
-        jdbcTemplate.update(sql, updatedBikePart.getBicycleId(), updatedBikePart.getName(),
-                updatedBikePart.getDescription(), updatedBikePart.getManufacturer(), updatedBikePart.getModel(),
-                updatedBikePart.getModelYear(), updatedBikePart.getPartType(), updatedBikePart.getInstallDate(),
-                updatedBikePart.getDistanceInMeters(), updatedBikePart.getAgeInterval(), updatedBikePart.getDistanceInterval(),
-                updatedBikePart.getMaterial(), updatedBikePart.getStyle(), updatedBikePart.getBikePartId());
+        try {
+            jdbcTemplate.update(sql, updatedBikePart.getBicycleId(), updatedBikePart.getName(),
+                    updatedBikePart.getDescription(), updatedBikePart.getManufacturer(), updatedBikePart.getModel(),
+                    updatedBikePart.getModelYear(), updatedBikePart.getPartType(), updatedBikePart.getInstallDate(),
+                    updatedBikePart.getDistanceInMeters(), updatedBikePart.getAgeInterval(), updatedBikePart.getDistanceInterval(),
+                    updatedBikePart.getMaterial(), updatedBikePart.getStyle(), updatedBikePart.getBikePartId());
+        }catch (Exception e){
+            return false;
+        }
+        return true;
     }
 
     @Override
-    public void deleteBikePart(int partId) {
+    public boolean deleteBikePart(int partId) {
         String sql = "UPDATE bike_part " +
                 "SET active = false, date_deleted = ? " +
                 "WHERE bike_part_id = ?;";
-        jdbcTemplate.update(sql, LocalDateTime.now(), partId);
-
+        try {
+            jdbcTemplate.update(sql, LocalDateTime.now(), partId);
+        }catch (Exception e){
+            return false;
+        }
+        return true;
     }
 }

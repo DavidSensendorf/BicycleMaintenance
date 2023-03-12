@@ -55,13 +55,13 @@ public class JdbcBrakeDao implements BrakeDao {
     }
 
     @Override
-    public void updateBrake(Brake updatedBrake) {
-
+    public boolean updateBrake(Brake updatedBrake) {
+        return true;
     }
 
     @Override
-    public void deleteBrake(int brakeId) {
-
+    public boolean deleteBrake(int brakeId) {
+        return true;
     }
 
 //    private Brake mapRowToBrake(SqlRowSet rowSet) {
