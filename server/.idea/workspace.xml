@@ -60,8 +60,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "jdk.selected.JAVA_MODULE": "11",
-    "last_directory_selection": "C:/Users/Student/workspace/personal/BicycleMaintenance/Test/java",
-    "last_opened_file_path": "C:/Users/Student/workspace/personal/leetcode",
+    "last_directory_selection": "C:/Users/Student/workspace/personal/BicycleMaintenance/server/Test/java/dao",
+    "last_opened_file_path": "C:/Users/Student/workspace/personal/BicycleMaintenance/server/src",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -74,28 +74,21 @@
       <recent name="C:\Users\Student\workspace\personal\BicycleMaintenance\database" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Student\workspace\personal\BicycleMaintenance\server\src" />
+      <recent name="C:\Users\Student\workspace\personal\BicycleMaintenance\server\src\main" />
+      <recent name="C:\Users\Student\workspace\personal\BicycleMaintenance\server" />
       <recent name="C:\Users\Student\workspace\personal\BicycleMaintenance\Test\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.sensendorf.bikemaintenancetest.dao" />
+      <recent name="com.sensendorf.bikemaintenancetest" />
+      <recent name="dao" />
       <recent name="bikemaintenance.dao.bikeClasses" />
       <recent name="Main" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in BicycleMaintenance">
+  <component name="RunManager" selected="JUnit.com.sensendorf.bikemaintenancetest.dao in BicycleMaintenance">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="bikemaintenance.Main" />
-      <module name="BicycleMaintenance" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bikemaintenance.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="com.sensendorf.bikemaintenance.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sensendorf.bikemaintenance.Main" />
       <module name="BicycleMaintenance" />
       <extension name="coverage">
@@ -116,31 +109,57 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JdbcBicycleDaoTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BikePartControllerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BicycleMaintenance" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="JdbcBicycleDaoTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sensendorf.bikemaintenancetest.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sensendorf.bikemaintenancetest.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.sensendorf.bikemaintenancetest.controllers.BikePartControllerTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JdbcBikePartDaoTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JdbcBicycleTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BicycleMaintenance" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="JdbcBikePartDaoTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sensendorf.bikemaintenancetest.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sensendorf.bikemaintenancetest.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.sensendorf.bikemaintenancetest.dao.JdbcBicycleTests" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.sensendorf.bikemaintenancetest.dao in BicycleMaintenance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BicycleMaintenance" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sensendorf.bikemaintenancetest.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sensendorf.bikemaintenancetest.dao" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in BicycleMaintenance" />
-        <item itemvalue="JUnit.JdbcBicycleDaoTests" />
-        <item itemvalue="JUnit.JdbcBikePartDaoTests" />
-        <item itemvalue="Application.com.sensendorf.bikemaintenance.Main" />
+        <item itemvalue="JUnit.com.sensendorf.bikemaintenancetest.dao in BicycleMaintenance" />
+        <item itemvalue="JUnit.BikePartControllerTests" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in BicycleMaintenance" />
+        <item itemvalue="JUnit.JdbcBicycleTests" />
       </list>
     </recent_temporary>
   </component>
@@ -154,5 +173,8 @@
       <updated>1676150834006</updated>
     </task>
     <servers />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/server$All_in_BicycleMaintenance.ic" NAME="All in BicycleMaintenance Coverage Results" MODIFIED="1678736855531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
