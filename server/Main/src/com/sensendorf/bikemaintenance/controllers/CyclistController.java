@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @RestController
 @RequestMapping("/cyclist")
@@ -31,28 +30,28 @@ public class CyclistController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(method = RequestMethod.POST)
-    public Cyclist addBikePart(@RequestBody Cyclist bikePart){
-        Cyclist returnBikePart = bikePartDao.createBikePart(bikePart);
-        if (returnBikePart == null){
+    public Cyclist addCyclist(@RequestBody Cyclist cyclist){
+        Cyclist returnCyclist = cyclistDao.createCyclist(cyclist);
+        if (returnCyclist == null){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Cyclist submission.");
         } else {
-            return returnBikePart;
+            return returnCyclist;
         }
     }
 
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping(method = RequestMethod.PUT)
-    public void updateBikePart(@Valid @RequestBody BikePart bikePart){
-        if (bikePartDao.updateBikePart(bikePart) == false){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid bike part submission");
+    public void updateCyclist(@Valid @RequestBody Cyclist cyclist){
+        if (cyclistDao.updateCyclist(cyclist) == false){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Cyclist submission");
         }
     }
 
     @ResponseStatus(HttpStatus.ACCEPTED)
     @RequestMapping(path = "/{id}",method = RequestMethod.DELETE)
-    public void deleteBikePart(@PathVariable int id){
-        if (bikePartDao.deleteBikePart(id) == false){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid bike part submission");
+    public void deleteCyclist(@PathVariable int id){
+        if (cyclistDao.deleteCyclist(id) == false){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Cyclist submission");
         }
     }
 }
