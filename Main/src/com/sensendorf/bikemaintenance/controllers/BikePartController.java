@@ -57,4 +57,12 @@ public class BikePartController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid bike part submission");
         }
     }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @RequestMapping(path = "/{id}",method = RequestMethod.DELETE)
+    public void deleteBikePart(@PathVariable int id){
+        if (bikePartDao.deleteBikePart(id) == false){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid bike part submission");
+        }
+    }
 }

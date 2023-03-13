@@ -49,5 +49,21 @@ public class BicycleController {
         }
     }
 
+    @ResponseStatus(HttpStatus.OK)
+    @RequestMapping(method = RequestMethod.PUT)
+    public void updateBicycle(@Valid @RequestBody Bicycle bicycle){
+        if (bicycleDao.updateBicycle(bicycle) == false){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid bicycle submission");
+        }
+    }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @RequestMapping(path = "/{id}",method = RequestMethod.DELETE)
+    public void deleteBicycle(@PathVariable int id){
+        if (bicycleDao.deleteBicycle(id) == false){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid bicycle submission");
+        }
+    }
+
 
 }
